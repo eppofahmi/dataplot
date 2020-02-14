@@ -1,4 +1,4 @@
-[![Travis-CI Build Status](https://travis-ci.org/eppofahmi/keData.svg?branch=master)](https://travis-ci.org/eppofahmi/dataplot)
+[![Travis-CI Build Status](https://travis-ci.org/eppofahmi/dataplot.svg?branch=master)](https://travis-ci.org/eppofahmi/dataplot)
 
 # dataplot
 
