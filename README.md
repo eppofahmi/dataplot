@@ -1,6 +1,9 @@
-# kedata_plottype
+# dataplot
 
-Kedata plot type standard and how to make
+Tema dan jenis plot umum yang digunakan di Kedata
+
+# Install 
+Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
 
 # Correlation
 
