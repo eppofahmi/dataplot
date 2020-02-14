@@ -2,10 +2,10 @@
 
 # dataplot
 
-Tema dan jenis plot umum yang digunakan di Kedata
+Tema dan jenis plot umum yang digunakan oleh Kedata Indonesia
 
 # Install 
-Install from GitHub: `devtools::install_github("eppofahmi/dataplot", force = TRUE)`
+Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
 
 # Correlation
 

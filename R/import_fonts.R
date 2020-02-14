@@ -1,6 +1,7 @@
 #' import fonts
 #'
-#' @description Import fonts from this package
+#' @description Import fonts Roboto untuk kebutuhan pembuatan judul dan
+#'      subjudul dengan menggunakan fungsi kedata_final
 #'
 #' @return loading req fonts
 #'

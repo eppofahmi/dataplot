@@ -2,22 +2,23 @@
 % Please edit documentation in R/finishing.R
 \name{kedata_final}
 \alias{kedata_final}
-\title{Finishing plot}
+\title{Finishing plot dengan gaya kedata}
 \usage{
 kedata_final(plotname, title, subtitle)
 }
 \arguments{
-\item{plotname}{ggplot object}
+\item{plotname}{Sebuah objek yang dibuat dengan menggunakan fungsi ggplot}
 
-\item{title}{character object}
+\item{title}{Sebuah kalimat berupa karakter untuk judul}
 
-\item{subtitle}{character object}
+\item{subtitle}{Sebuah kaliamt berupa karakter untuk subjudul}
 }
 \value{
-ggplot object
+Objek ggplot
 }
 \description{
-Finishing plot
+Pertama, membuat judul dan subjudul plot rata dengan tulisan di garis X.
+       kedua, membuat logo kedata ada di pojok kanan atas plot yang dibuat.
 }
 \examples{
 \dontrun{

@@ -5,14 +5,17 @@ Version: 0.1.0
 Author: Who wrote it
 Maintainer: Ujang Fahmi <ujangfahmi@kedata.online>
 Description: Paket ini bersisi tema umum dan tema untuk plot-plot
-    yang sering digunakan dalam proses analisis data.
+    yang sering digunakan dalam proses analisis data. Untuk bisa menggunakan 
+    fungsi dengan lancar, sebaiknya di sistem anda sudah terisntal font Roboto,
+    jika belum, bisa menggunakan fungsi dataplot::import_fonts().
 Imports:
-    extrafont,
-    ggplot2,
-    dplyr,
-    tidyr,
+    cowplot,
+    digest (>= 0.6.23),
+    dplyr (>= 0.8.4),
+    extrafont (>= 0.17),
+    ggplot2 (>= 3.2.1),
     magick (>= 2.3), 
-    digest (>= 0.6.23)
+    tidyr (>= 1.0.2)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

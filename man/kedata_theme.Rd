@@ -10,7 +10,10 @@ kedata_theme()
 ggplot theme
 }
 \description{
-theme kedata
+tema dengan aturan khusus yang bisa langsung dimasukkan dengan
+   tanda + pada saat membuat plot dengan ggplot. Font yang digunakan di
+   sini adalah Roboto Light. Jika anda menggunakan caption, maka hal
+   tersebut akan ditempatkan di bagian pojok kanan bawah.
 }
 \examples{
 \dontrun{

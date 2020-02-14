@@ -1,10 +1,13 @@
-#' Finishing plot
+#' Finishing plot dengan gaya kedata
 #'
-#' @param plotname ggplot object
-#' @param title character object
-#' @param subtitle character object
+#' @description Pertama, membuat judul dan subjudul plot rata dengan tulisan di garis X.
+#'        kedua, membuat logo kedata ada di pojok kanan atas plot yang dibuat.
 #'
-#' @return ggplot object
+#' @param plotname Sebuah objek yang dibuat dengan menggunakan fungsi ggplot
+#' @param title Sebuah kalimat berupa karakter untuk judul
+#' @param subtitle Sebuah kaliamt berupa karakter untuk subjudul
+#'
+#' @return Objek ggplot
 #'
 #' @examples
 #' \dontrun{

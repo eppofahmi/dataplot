@@ -10,7 +10,8 @@ import_fonts()
 loading req fonts
 }
 \description{
-Import fonts from this package
+Import fonts Roboto untuk kebutuhan pembuatan judul dan
+     subjudul dengan menggunakan fungsi kedata_final
 }
 \examples{
 import_fonts()
