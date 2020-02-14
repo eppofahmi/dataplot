@@ -9,6 +9,6 @@
 #'
 #' @export
 import_fonts <- function() {
-  extrafont::font_import(paths = system.file("extdata/logo/", package = "dataplot"))
+  extrafont::font_import(paths = system.file("extdata/fonts/", package = "dataplot"))
   extrafont::loadfonts()
   }
