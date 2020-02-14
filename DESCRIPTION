@@ -11,7 +11,8 @@ Imports:
     ggplot2,
     dplyr,
     tidyr,
-    magick (>= 2.3)
+    magick (>= 2.3), 
+    digest (>= 0.6.23)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
