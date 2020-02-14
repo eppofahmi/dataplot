@@ -1,11 +1,11 @@
 Package: dataplot
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Paket visualisasi data dari Kedata Indonesia
 Version: 0.1.0
 Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Ujang Fahmi <ujangfahmi@kedata.online>
+Description: Paket ini bersisi tema umum dan tema untuk plot-plot
+    yang sering digunakan dalam proses analisis data.
 Imports:
     extrafont,
     ggplot2,
