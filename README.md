@@ -1,3 +1,5 @@
+[![Travis-CI Build Status](https://travis-ci.org/eppofahmi/keData.svg?branch=master)](https://travis-ci.org/eppofahmi/keData)
+
 # dataplot
 
 Tema dan jenis plot umum yang digunakan di Kedata
