@@ -5,7 +5,7 @@
 Tema dan jenis plot umum yang digunakan di Kedata
 
 # Install 
-Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
+Install from GitHub: `devtools::install_github("eppofahmi/dataplot", force = TRUE)`
 
 # Correlation
 
