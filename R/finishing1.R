@@ -1,4 +1,4 @@
-#' Finishing plot dengan gaya kedata
+#' Finishing plot dengan gaya kedata1
 #'
 #' @description Pertama, membuat judul dan subjudul plot rata dengan tulisan di garis X.
 #'        kedua, membuat logo kedata ada di pojok kanan atas plot yang dibuat.
@@ -25,8 +25,8 @@
 #' }
 #'
 #' @export
-kedata_final <- function(plotname, title, subtitle){
-  # Logo
+kedata_final1 <- function(plotname, title, subtitle){
+  # Footer
   logo_file <- magick::image_read(path = system.file("extdata/logo/", "logokedata.png", package = "dataplot"))
   p1 <- cowplot::ggdraw() +
     cowplot::draw_image(logo_file,
@@ -38,7 +38,6 @@ kedata_final <- function(plotname, title, subtitle){
                         height = 0.2,
                         clip = "inherit") +
     cowplot::draw_plot(plotname)
-
   # Title
   title <- cowplot::ggdraw() +
     cowplot::draw_label(paste0(toupper(title)),
@@ -59,5 +58,5 @@ kedata_final <- function(plotname, title, subtitle){
     ggplot2::theme(plot.margin = ggplot2::margin(0, 0, 0, 20))
   # Final
   p1 <- cowplot::plot_grid(title, p1, ncol = 1, rel_heights = c(0.1, 1))
-  p1
+  return(p1)
   }
