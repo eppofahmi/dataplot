@@ -1,16 +1,18 @@
 create_footer <- function (source_name) {
   #Make the footer
-  footer <- grid::grobTree(grid::rectGrob(gp = grid::gpar(fill='black', lwd=0)),
-                           grid::textGrob(source_name, x = 0.025, hjust = 0,
-                                          gp = grid::gpar(fontsize=8,
+  footer <- grid::grobTree(grid::rectGrob(gp = grid::gpar(fill='#323441', lwd=0)),
+                           grid::textGrob(source_name, x = 0.022, hjust = 0,
+                                          gp = grid::gpar(fontsize=10,
                                                           family = 'Roboto Light',
                                                           col='white')),
-                           grid::rasterGrob(png::readPNG(system.file("extdata/logo/", "logokedata.png",
-                                                                     package = "dataplot")), x = 0.944))
+                           grid::rasterGrob(png::readPNG(system.file("extdata/logo/", "logokedata2.png",
+                                                                     package = "dataplot")), x = 0.912))
   return(footer)
   }
 
 #' Kedata style 2
+#'
+#' @description menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 #'
 #' @param plotname ggplot object
 #' @param title character
@@ -21,6 +23,7 @@ create_footer <- function (source_name) {
 #'
 #' @examples
 #' \dontrun{
+#' library(dataplot)
 #' library(ggplot2)
 #' p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
 #'   geom_line() +
@@ -43,7 +46,7 @@ kedata_final2 <- function(plotname,
                         fontface = 'bold',
                         x = 0,
                         hjust = 0,
-                        fontfamily = "Roboto Black",
+                        fontfamily = "Roboto Bold",
                         size = 18,
                         color = "#274374") +
     cowplot::draw_label(paste0(subtitle),

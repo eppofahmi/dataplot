@@ -19,10 +19,11 @@ kedata_final2(plotname, title, subtitle, data_source)
 
 }
 \description{
-Kedata style 2
+menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 }
 \examples{
 \dontrun{
+library(dataplot)
 library(ggplot2)
 p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
   geom_line() +
