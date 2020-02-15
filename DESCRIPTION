@@ -9,7 +9,7 @@ Description: Paket ini bersisi tema umum dan tema untuk plot-plot
     fungsi dengan lancar, sebaiknya di sistem anda sudah terisntal font Roboto,
     jika belum, bisa menggunakan fungsi dataplot::import_fonts().
 Imports:
-    cowplot (>= 1.0.0.9000),
+    cowplot,
     digest (>= 0.6.23),
     dplyr (>= 0.8.4),
     extrafont (>= 0.17),
