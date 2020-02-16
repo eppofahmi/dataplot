@@ -1,12 +1,15 @@
 create_footer <- function (source_name) {
   #Make the footer
   footer <- grid::grobTree(grid::rectGrob(gp = grid::gpar(fill='#323441', lwd=0)),
-                           grid::textGrob(source_name, x = 0.022, hjust = 0,
+                           grid::textGrob(source_name,
+                                          x = 0.022,
+                                          hjust = 0,
                                           gp = grid::gpar(fontsize=10,
-                                                          family = 'Roboto Light',
+                                                          family = 'Roboto',
                                                           col='white')),
                            grid::rasterGrob(png::readPNG(system.file("extdata/logo/", "logokedata2.png",
-                                                                     package = "dataplot")), x = 0.912))
+                                                                     package = "dataplot")),
+                                            x = 0.912))
   return(footer)
   }
 
@@ -46,7 +49,7 @@ kedata_final2 <- function(plotname,
                         fontface = 'bold',
                         x = 0,
                         hjust = 0,
-                        fontfamily = "Roboto Bold",
+                        fontfamily = "Roboto",
                         size = 18,
                         color = "#274374") +
     cowplot::draw_label(paste0(subtitle),
@@ -54,7 +57,7 @@ kedata_final2 <- function(plotname,
                         x = 0,
                         hjust = 0,
                         vjust = 2.5,
-                        fontfamily = "Roboto Light",
+                        fontfamily = "Roboto",
                         size = 12,
                         color = "#0F9FD6") +
     ggplot2::theme(plot.margin = ggplot2::margin(0, 0, 0, 20))

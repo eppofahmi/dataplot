@@ -29,6 +29,7 @@ Membuat scater dengan dua variabel dalam gaya kedata
 \dontrun{
 library(dataplot)
 library(ggplot2)
+
 sctr2(data = economics, x = "psavert", y = "uempmed",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",

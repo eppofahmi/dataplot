@@ -28,11 +28,15 @@ kedata_theme <- function() {
 
   ggplot2::theme(legend.position = "top",
                  legend.title = ggplot2::element_blank(),
-                 legend.text.align = 0,
-                 text = ggplot2::element_text(size = 10,  family = "Roboto Light"),
+                 legend.text = ggplot2::element_text(size = 8, color = "#323441"),
+                 legend.text.align = 0.5,
+                 legend.justification = c("right", "top"),
+                 legend.box.just = "left",
+                 legend.margin = ggplot2::margin(t = 0, r = 0, b = 0, l = 0, unit = "line"),
+                 text = ggplot2::element_text(size = 10,  family = "Roboto"),
                  plot.caption = ggplot2::element_text(face = "italic", color = "#274374",
-                                                      family = "Roboto Light"),
-                 axis.text = ggplot2::element_text(family = "Roboto Light", size=10),
+                                                      family = "Roboto"),
+                 axis.text = ggplot2::element_text(family = "Roboto", size=10),
                  plot.margin = ggplot2::unit(c(1.7, 1, 1, 1), "line")
                  )
   }

@@ -44,7 +44,7 @@ kedata_final1 <- function(plotname, title, subtitle){
                         fontface = 'bold',
                         x = 0,
                         hjust = 0,
-                        fontfamily = "Roboto Black",
+                        fontfamily = "Roboto",
                         size = 18,
                         color = "#274374") +
     cowplot::draw_label(paste0(subtitle),
@@ -52,7 +52,7 @@ kedata_final1 <- function(plotname, title, subtitle){
                         x = 0,
                         hjust = 0,
                         vjust = 2.5,
-                        fontfamily = "Roboto Light",
+                        fontfamily = "Roboto",
                         size = 12,
                         color = "#0F9FD6") +
     ggplot2::theme(plot.margin = ggplot2::margin(0, 0, 0, 20))
