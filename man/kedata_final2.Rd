@@ -9,29 +9,30 @@ kedata_final2(plotname, title, subtitle, data_source)
 \arguments{
 \item{plotname}{ggplot object}
 
-\item{title}{character}
+\item{title}{character for plot title}
 
-\item{subtitle}{character}
+\item{subtitle}{character for plot subtitle}
 
-\item{data_source}{character}
+\item{data_source}{character for plot caption}
 }
 \value{
 
 }
 \description{
-menempatkan footer dibagian bawah yang terdiri dari logo dan data source
+Menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 }
 \examples{
 \dontrun{
 library(dataplot)
 library(ggplot2)
+
 p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
   geom_line() +
   kedata_theme()
 
 kedata_final2(plotname = p1,
-              title = "Tes Judul di Bagian Ini",
-              subtitle = "Tes subtitle di bagian ini lebih panjang",
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
               data_source = "Sumber Data")
 }
 

@@ -1,38 +1,35 @@
-#' Scatter plot 2 variables in kedata style
+#' Scatter plot 4 variables in kedata style
 #'
-#' @description Membuat scater dengan dua variabel dalam gaya kedata
-#'
-#' @param data data frame
+#' @param data Data frame
 #' @param x character of column name for x axis
 #' @param y character of column name for y axis
+#' @param color column name to ploted as point colors
+#' @param size column name to ploted as point sizes
 #' @param title character for plot title
 #' @param subtitle character for plot subtitle
 #' @param data_source character for footer text
 #'
-#' @return ggdraw object
+#' @return
 #'
 #' @examples
 #' \dontrun{
 #' library(dataplot)
 #' library(ggplot2)
-#'
-#' sctr2(data = economics, x = "psavert", y = "uempmed",
+#' sctr4(data = midwest, x = "area", y = "poptotal", color = "state", size = "popdensity",
 #'       title = "Lorem Ipsum is simply dummy text",
 #'       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'       data_source = "www.kedata.online")
-#'
-#' ggsave(filename = "tes.png", dpi = 300, height = 6, width = 9)
 #' }
 #'
 #' @export
-sctr2 <- function(data, x, y, title, subtitle, data_source) {
+sctr4 <- function(data, x, y, color, size, title, subtitle, data_source) {
 
-  data <- data[, c(x, y)]
+  data <- data[, c(x, y, color, size)]
 
-  colnames(data) <- c("col1", "col2")
+  colnames(data) <- c("col1", "col2", "col3", "col4")
 
-  p1 <- ggplot2::ggplot(data = data, ggplot2::aes(x = col1, y= col2)) +
-    ggplot2::geom_point(color = "#274374") +
+  p1 <- ggplot2::ggplot(data = data, ggplot2::aes(x = col1, y = col2, color = col3, size = col4)) +
+    ggplot2::geom_point() +
     ggplot2::labs(x = paste0(x), y = paste0(y)) +
     dataplot::kedata_theme()
 

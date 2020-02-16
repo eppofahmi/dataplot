@@ -24,6 +24,7 @@
 #'
 #' @export
 kedata_theme <- function() {
+  options(scipen=999) # turn off scientific number
   ggplot2::theme_set(cowplot::theme_minimal_grid())  # pre-set the bw theme.
 
   ggplot2::theme(legend.position = "top",

@@ -1,8 +1,8 @@
 Package: dataplot
 Type: Package
-Title: Paket visualisasi data dari Kedata Indonesia
+Title: Library visualisasi data dari Kedata Indonesia
 Version: 0.1.0
-Author: Who wrote it
+Author: Ujang Fahmi
 Maintainer: Ujang Fahmi <ujangfahmi@kedata.online>
 Description: Paket ini bersisi tema umum dan tema untuk plot-plot
     yang sering digunakan dalam proses analisis data. Untuk bisa menggunakan 

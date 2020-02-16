@@ -15,12 +15,12 @@ create_footer <- function (source_name) {
 
 #' Kedata style 2
 #'
-#' @description menempatkan footer dibagian bawah yang terdiri dari logo dan data source
+#' @description Menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 #'
 #' @param plotname ggplot object
-#' @param title character
-#' @param subtitle character
-#' @param data_source character
+#' @param title character for plot title
+#' @param subtitle character for plot subtitle
+#' @param data_source character for plot caption
 #'
 #' @return
 #'
@@ -28,13 +28,14 @@ create_footer <- function (source_name) {
 #' \dontrun{
 #' library(dataplot)
 #' library(ggplot2)
+#'
 #' p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
 #'   geom_line() +
 #'   kedata_theme()
 #'
 #' kedata_final2(plotname = p1,
-#'               title = "Tes Judul di Bagian Ini",
-#'               subtitle = "Tes subtitle di bagian ini lebih panjang",
+#'               title = "Lorem Ipsum is simply dummy text",
+#'               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'               data_source = "Sumber Data")
 #' }
 #'
