@@ -1,7 +1,7 @@
 create_footer1 <- function (source_name, logo_path, footer_col) {
   #Make the footer
   footer <- grid::grobTree(
-    rectGrob(gp = gpar(fill = footer_col, lwd = 0)),
+    grid::rectGrob(gp = grid::gpar(fill = footer_col, lwd = 0)),
     # grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")),
     grid::textGrob(
       source_name,
