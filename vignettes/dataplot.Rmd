@@ -120,4 +120,15 @@ p4
 
 ## Jenis Plot
 
-Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 ggplot2 Visualizations](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex)], dan postingan teman-teman R Community di Twitter^[[TidyTuesday](https://twitter.com/search?q=%23TidyTuseday&src=typed_query)]. 
+Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 ggplot2 Visualizations](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex)], dan postingan teman-teman R Community di Twitter^[[TidyTuesday](https://twitter.com/search?q=%23TidyTuseday&src=typed_query)]. Untuk mengetahui penggunaan masing-masing fungsi membuat plot, bisa melihat dokumentasi berikut:
+
+1. Correlation Plot, lihat `vignette(correlation)` 
+2. Deviation Plot, lihat `vignette(deviation)`
+3. Ranking Plot, lihat `vignette(ranking)`
+4. Distribution Plot, lihat `vignette(distribution)`
+5. Composition Plot, lihat `vignette(composition)`
+6. Change Plot, lihat `vignette(change_plot)`
+7. Groups Plot, lihat `vignette(group_plot)`
+8. Spatial Plot, lihat `vignette(sp_plot)`
+
+Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi `vignette(nama_dokuemnatasi)` di bagian konsol. Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot. 

@@ -17,7 +17,6 @@ create_footer1 <- function (source_name, logo_path, footer_col) {
   )
   return(footer)
 }
-
 #' Kedata style custome plot finishing
 #'
 #' @description Menempatkan footer dibagian bawah yang terdiri dari logo dan data source
@@ -29,7 +28,7 @@ create_footer1 <- function (source_name, logo_path, footer_col) {
 #' @param footer_col default to red
 #' @param logo path to image logo
 #'
-#' @return
+#' @return ggdraw object
 #'
 #' @examples
 #' \dontrun{
@@ -54,30 +53,48 @@ kedata_custom <- function(plotname,
                           subtitle,
                           data_source,
                           footer_col = "red",
-                          logo){
+                          logo) {
   # Title
   title <- cowplot::ggdraw() +
-    cowplot::draw_label(paste0(toupper(title)),
-                        fontface = 'bold',
-                        x = 0,
-                        hjust = 0,
-                        fontfamily = "Roboto",
-                        size = 18,
-                        color = "#274374") +
-    cowplot::draw_label(paste0(subtitle),
-                        fontface = 'plain',
-                        x = 0,
-                        hjust = 0,
-                        vjust = 2.5,
-                        fontfamily = "Roboto",
-                        size = 12,
-                        color = "#0F9FD6") +
+    cowplot::draw_label(
+      paste0(toupper(title)),
+      fontface = 'bold',
+      x = 0,
+      hjust = 0,
+      fontfamily = "Roboto",
+      size = 18,
+      color = "#274374"
+    ) +
+    cowplot::draw_label(
+      paste0(subtitle),
+      fontface = 'plain',
+      x = 0,
+      hjust = 0,
+      vjust = 2.5,
+      fontfamily = "Roboto",
+      size = 12,
+      color = "#0F9FD6"
+    ) +
     ggplot2::theme(plot.margin = ggplot2::margin(0, 0, 0, 20))
   # Ploting title and subtitel
-  p1 <- cowplot::plot_grid(title, plotname, ncol = 1, rel_heights = c(0.1, 1))
+  p1 <-
+    cowplot::plot_grid(title,
+                       plotname,
+                       ncol = 1,
+                       rel_heights = c(0.1, 1))
   # Footer and data source
-  footer <- create_footer1(source_name = paste0(data_source), logo_path = paste0(logo), footer_col)
+  footer <-
+    create_footer1(source_name = paste0(data_source),
+                   logo_path = paste0(logo),
+                   footer_col)
   # Final plot
-  p1 <- ggpubr::ggarrange(p1, footer, ncol = 1, nrow = 2, heights = c(1, 0.045/(450/450)))
+  p1 <-
+    ggpubr::ggarrange(
+      p1,
+      footer,
+      ncol = 1,
+      nrow = 2,
+      heights = c(1, 0.045 / (450 / 450))
+    )
   return(p1)
 }

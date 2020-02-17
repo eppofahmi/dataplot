@@ -16,7 +16,7 @@ kedata_final2(plotname, title, subtitle, data_source)
 \item{data_source}{character for plot caption}
 }
 \value{
-
+ggdraw object
 }
 \description{
 Menempatkan footer dibagian bawah yang terdiri dari logo dan data source

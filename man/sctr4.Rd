@@ -24,7 +24,7 @@ sctr4(data, x, y, color, size, title, subtitle, data_source)
 \item{data_source}{character for footer text}
 }
 \value{
-
+ggdraw object
 }
 \description{
 Scatter plot 4 variables in kedata style

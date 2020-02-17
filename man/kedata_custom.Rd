@@ -20,7 +20,7 @@ kedata_custom(plotname, title, subtitle, data_source, footer_col = "red", logo)
 \item{logo}{path to image logo}
 }
 \value{
-
+ggdraw object
 }
 \description{
 Menempatkan footer dibagian bawah yang terdiri dari logo dan data source

@@ -30,7 +30,7 @@ create_footer <- function (source_name) {
 #' @param subtitle character for plot subtitle
 #' @param data_source character for plot caption
 #'
-#' @return
+#' @return ggdraw object
 #'
 #' @examples
 #' \dontrun{
@@ -51,30 +51,45 @@ create_footer <- function (source_name) {
 kedata_final2 <- function(plotname,
                           title,
                           subtitle,
-                          data_source){
+                          data_source) {
   # Title
   title <- cowplot::ggdraw() +
-    cowplot::draw_label(paste0(toupper(title)),
-                        fontface = 'bold',
-                        x = 0,
-                        hjust = 0,
-                        fontfamily = "Roboto",
-                        size = 18,
-                        color = "#274374") +
-    cowplot::draw_label(paste0(subtitle),
-                        fontface = 'plain',
-                        x = 0,
-                        hjust = 0,
-                        vjust = 2.5,
-                        fontfamily = "Roboto",
-                        size = 12,
-                        color = "#0F9FD6") +
+    cowplot::draw_label(
+      paste0(toupper(title)),
+      fontface = 'bold',
+      x = 0,
+      hjust = 0,
+      fontfamily = "Roboto",
+      size = 18,
+      color = "#274374"
+    ) +
+    cowplot::draw_label(
+      paste0(subtitle),
+      fontface = 'plain',
+      x = 0,
+      hjust = 0,
+      vjust = 2.5,
+      fontfamily = "Roboto",
+      size = 12,
+      color = "#0F9FD6"
+    ) +
     ggplot2::theme(plot.margin = ggplot2::margin(0, 0, 0, 20))
   # Ploting title and subtitel
-  p1 <- cowplot::plot_grid(title, plotname, ncol = 1, rel_heights = c(0.1, 1))
+  p1 <-
+    cowplot::plot_grid(title,
+                       plotname,
+                       ncol = 1,
+                       rel_heights = c(0.1, 1))
   # Footer and data source
   footer <- create_footer(source_name = paste0(data_source))
   # Final plot
-  p1 <- ggpubr::ggarrange(p1, footer, ncol = 1, nrow = 2, heights = c(1, 0.045/(450/450)))
+  p1 <-
+    ggpubr::ggarrange(
+      p1,
+      footer,
+      ncol = 1,
+      nrow = 2,
+      heights = c(1, 0.045 / (450 / 450))
+    )
   return(p1)
-  }
+}

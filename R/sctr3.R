@@ -8,7 +8,7 @@
 #' @param subtitle character for plot subtitle
 #' @param data_source character for footer text
 #'
-#' @return
+#' @return ggdraw object
 #'
 #' @examples
 #' \dontrun{
@@ -22,9 +22,7 @@
 #'
 #' @export
 sctr3 <- function(data, x, y, color, title, subtitle, data_source) {
-
   data <- data[, c(x, y, color)]
-
   colnames(data) <- c("col1", "col2", "col3")
 
   p1 <- ggplot2::ggplot(data = data, ggplot2::aes(x = col1, y = col2, color = col3)) +
@@ -36,4 +34,4 @@ sctr3 <- function(data, x, y, color, title, subtitle, data_source) {
                 title = paste0(title),
                 subtitle = paste0(subtitle),
                 data_source = paste0(data_source))
-}
+  }

@@ -22,7 +22,7 @@ sctr3(data, x, y, color, title, subtitle, data_source)
 \item{data_source}{character for footer text}
 }
 \value{
-
+ggdraw object
 }
 \description{
 Scatter plot 3 variables in kedata style
