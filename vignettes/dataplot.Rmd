@@ -2,7 +2,9 @@
 title: "How to use dataplot"
 author: "Ujang Fahmi"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
 vignette: >
   %\VignetteIndexEntry{How to use dataplot}
   %\VignetteEngine{knitr::rmarkdown}
@@ -11,55 +13,111 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
+  collapse = TRUE, warning = FALSE, message = FALSE,
   comment = "#>"
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+Visualisasi merupakan salah satu cara untuk mengomunikasikan hasil analisis. Selain itu, visualiasi juga merupakan salah satu teknik yang akan sangat bermanfaat dalam proses ekplorasi data. Package ini dibuat untuk digunakan untuk mencapai keduanya. Package ini sendiri merupakan adaptasi dari beberapa pacakage di R yang sudah ada sebelumnya seperti `bbplot` dari bbc, `cowplot`, `hbrthemes` dan lain-lain. 
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+Package ini digunakan untuk membuat plot statis berdasarkan package `ggplot2` dengan beberapa modifikasi dilakukan pada beberapa bagian berikut:
 
-## Vignette Info
+- Judul (title) dan Sub Judul (Subtitle)
+- Captioan atau footer
+- Geom yang dimanfaatkan secara langsung untuk memetakan variabel yang ingin diplotkan
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+## Persiapan penggunaan
+### Fonts
 
-## Styles
+Fonts yang digunakan dalam template plot di package ini adalah keluarga Roboto. Untuk itu, jika dalam mesin anda belum menginstall font tersebut kami sarankan untuk menginstallnya terlebih dahulu. Untuk mempermudah, di dalam package ini kami juga membuat sebuah fungsi `import_fonts()` untuk mengambil fonts yang dibutuhkan yang telah kami sertakan dalam package. Untuk menggunakannya, kita bisa mengkopi paste dengan menjalankan skrip berikut: 
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+```{r, eval=FALSE}
+library(dataplot)
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+# type y on the console
+dataplot::import_fonts()
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Untuk mengimpor fonts yang ada di dalam package anda perlu mengeti `y` pada saat menjalankan skrip diatas. 
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+### Logo
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+logo akan digunakan dalam fungsi untuk finishing. Secara default logo akan diambil dari package, yaitu logo kedata. Format yang digunakan adalah `.png`. Jika ingin membuat plot dengan logo milik sendiri maka anda bisa menggunakan fungsi `kedata_custom()`. Jika anda menggunakan fungsi tersebut, maka anda harus menyatakan folder dan file dalam fungsi. 
 
-## More Examples
+### Footer
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+Footer digunakan untuk menempatkan caption di sebelah kiri plot dan logo di sebelah kanan. Secara default footer berwarna gelap, jika anda ingin mengubah warnanya bisa dilakukan dengan fungsi `kedata_custom()` dan mengisi parameter warna/color dengan kode hexagon dari warna. 
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+## Membuat plot dengan Template
+
+Package ini memiliki 4 fungsi utama untuk membuat sebuah plot, yaitu: (1) `kedata_theme()`; (2) `kedata_final1()`; (3). `kedata_final2()`; (4) `kedata_custom()`. Berikut adalah contoh penggunaannya. 
+
+1. `kedata_theme()`
+
+```{r, fig.align='center', fig.width=7, fig.height=5}
+library(dataplot)
+library(ggplot2)
+
+p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+  geom_line() +
+  kedata_theme()
+p1
 ```
 
-Also a quote using `>`:
+2. `kedata_final1()`
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+```{r, fig.align='center', fig.width=7, fig.height=5}
+library(dataplot)
+library(ggplot2)
+
+p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+  geom_line() +
+  kedata_theme()
+
+p2 <- kedata_final1(plotname = p1, 
+                    title = "Lorem Ipsum is simply dummy text", 
+                    subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text")
+p2
+```
+
+3. `kedata_final2()`
+
+```{r, fig.align='center', fig.width=7, fig.height=5}
+library(dataplot)
+library(ggplot2)
+
+p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+  geom_line() +
+  kedata_theme()
+
+p3 <- kedata_final2(plotname = p1,
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              data_source = "Sumber Data")
+
+p3
+```
+
+4. `kedata_custom()`
+
+```{r, fig.align='center', fig.width=7, fig.height=5}
+library(dataplot)
+library(ggplot2)
+
+p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+  geom_line(color = "#E0A526") +
+  kedata_theme()
+
+p4 <- kedata_custom(plotname = p1,
+              footer_col = "#BB4628",
+              logo = system.file("extdata/logo/", "contohlogo.png", package = "dataplot"),
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              data_source = "www.sadasa.id")
+
+p4
+```
+
+## Jenis Plot
+
+Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 ggplot2 Visualizations](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex)], dan postingan teman-teman R Community di Twitter^[[TidyTuesday](https://twitter.com/search?q=%23TidyTuseday&src=typed_query)]. 

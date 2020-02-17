@@ -30,7 +30,7 @@ p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
 # Drawing left aligned title
 p1 <- kedata_final1(plotname = p1,
               title = "Lorem Ipsum is simply dummy text",
-              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text")
 p1
 # Saving plot result
 ggsave(filename = "tes.png", dpi = 300, height = 6, width = 9)
