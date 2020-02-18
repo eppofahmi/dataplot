@@ -11,12 +11,8 @@ Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
 
 1. Scatterplot: sctr(), sctr3()
 2. Scatterplot With Encircling
-3. Jitter Plot
-4. Counts Chart
-5. Bubble Plot
-6. Animated Bubble Plot
-7. Marginal Histogram / Boxplot
-8. Correlogram
+3. Marginal Histogram/Boxplot
+4. Correlogram
 
 # Deviation
 

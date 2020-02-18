@@ -69,4 +69,38 @@ sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "p
       data_source = "www.kedata.online")
 ```
 
-Dari plot diatas, kita bisa melihat bahwa selain tetap melihat hubungan positif antara dua variabel kita juga bisa melihat variabel lain yang bisa menambah penjelasan dari hubungan yang terjadi. Berdasarkan plot, kita bisa mengatakan bahwa semakin banyak `poptotal` semakin tinggi `popwhite` serta semakin besar juga `popdensity`. Artinya, semakin tinggi populasi sebuah daerah, semakin banyak juga populasi kulit pitih dan semakin padat daerahnya.  
+Dari plot diatas, kita bisa melihat bahwa selain tetap melihat hubungan positif antara dua variabel kita juga bisa melihat variabel lain yang bisa menambah penjelasan dari hubungan yang terjadi. Berdasarkan plot, kita bisa mengatakan bahwa semakin banyak `poptotal` semakin tinggi `popwhite` serta semakin besar juga `popdensity`. Artinya, semakin tinggi populasi sebuah daerah, semakin banyak juga populasi kulit pitih dan semakin padat daerahnya.
+
+## Plot hubungan 2 variabel + marginal plot
+
+Jika anda ingin memembuat dua plot dalam satu gambar untuk menujukkan hubungan sekaligus distribusi dari variabel tersebut, maka anda bisa menggunakan fungsi `mrg_plot()`. Berikut adalah contohnya: 
+
+```{r mrg_plot}
+library(dataplot)
+library(ggplot2)
+
+p1 <- mrg_plot(data = economics, x = "psavert", y = "uempmed",
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              data_source = "www.kedata.online",
+              mg_type = "histogram")
+
+p1
+```
+
+Pada dasarnya plot tersebut merupakan scatterplot, namun di sini kita menambhakn informasi terkait dengan distribusi dari masing-masing variabel. Hal tersebut dapat direpresentasikan dengan memilih tipe plot dalam paramater `mg_type`. Pilihan yang tersedia untuk parameter tersebut adalah: (1) `histogram`; (2) `boxplot`; (3) `density`. 
+
+## Correlation plot
+
+Korelasi antar variabel juga bisa ditampilkan dalam sebuah plot secara langsung. Tentunya untuk membuat plot korelasi antar variabel kita juga perlu mempertimbangkan jumlah variabel yang ada dalam sebuah data. Karena jika variabelnya terlalu banyak, maka plot akan menjadi terlu penuh dan susah untuk dipahami. Syarat utama untuk membuat plot matriks korelasi adalah semua variabelnya berjenis numerik dan turuannya. 
+
+```{r corplot}
+library(dataplot)
+library(ggplot2)
+
+cor_plot(data = mtcars,
+         title = "Lorem Ipsum is simply dummy text",
+         subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+         data_source = "Sumber Data")
+```
+

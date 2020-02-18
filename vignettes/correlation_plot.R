@@ -29,3 +29,24 @@ sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "p
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
 
+## ----mrg_plot-----------------------------------------------------------------
+library(dataplot)
+library(ggplot2)
+
+p1 <- mrg_plot(data = economics, x = "psavert", y = "uempmed",
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              data_source = "www.kedata.online",
+              mg_type = "histogram")
+
+p1
+
+## ----corplot------------------------------------------------------------------
+library(dataplot)
+library(ggplot2)
+
+cor_plot(data = mtcars,
+         title = "Lorem Ipsum is simply dummy text",
+         subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+         data_source = "Sumber Data")
+
