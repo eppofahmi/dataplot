@@ -5,6 +5,7 @@ date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
     fig_caption: yes
+    toc: 3
 vignette: >
   %\VignetteIndexEntry{How to use dataplot}
   %\VignetteEngine{knitr::rmarkdown}
@@ -122,7 +123,7 @@ p4
 
 Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 ggplot2 Visualizations](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex)], dan postingan teman-teman R Community di Twitter^[[TidyTuesday](https://twitter.com/search?q=%23TidyTuseday&src=typed_query)]. Untuk mengetahui penggunaan masing-masing fungsi membuat plot, bisa melihat dokumentasi berikut:
 
-1. Correlation Plot, lihat `vignette(correlation)` 
+1. Correlation Plot, lihat `vignette(correlation_plot)` 
 2. Deviation Plot, lihat `vignette(deviation)`
 3. Ranking Plot, lihat `vignette(ranking)`
 4. Distribution Plot, lihat `vignette(distribution)`

@@ -1,0 +1,72 @@
+---
+title: "Correlation Plot"
+author: "Ujang Fahmi"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: 3
+vignette: >
+  %\VignetteIndexEntry{Correlation Plot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, warning = FALSE, message = FALSE, fig.align='center', fig.width=7, fig.height=5,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+Plot korelasi merupakan salah satu jenis plot yang paling banyak di buat digunakan, baik dalam tahapn mengkominikasikan maupun mengeksplorasi data. Berikut adalah beberapa jenis plot korelasi yang dapat dibuat menggunakan fungsi dari `dataplot`. Plot-plot korelasi berfungsi untuk mendeteksi dan melihat kemungkinan adanya hubungan baik positif maupun sebaliknya antara dua variabel. Jenis variabel yang umumnya dilihat adalah variabel numerik. 
+
+Fungsi-fungsi berikut ini adalah cara cepat untuk memproduksi plot hubungan dengan style kedata. Jika ingin membuat plot yang lebih sesuai dari sisi warna dan lain sebagainya sangat disarankan untuk menggunakan fungsi `kedata_theme()` dan fungsi `kedata_final()`.
+
+## Plot hubungan dengan dua variabel: `sctr2()`
+
+Hubungan antara dua variabel dapat direpresentasikan menggunakan scatter plot. Untuk melihat hubungannya dalam plot, `dataplot` memiliki fungsi sctr2() yang bisa dibaca scatter plot 2 variabel.  
+
+```{r sctr2}
+library(dataplot)
+library(ggplot2)
+
+sctr2(data = economics, x = "psavert", y = "uempmed",
+      title = "Lorem Ipsum is simply dummy text",
+      subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+      data_source = "www.kedata.online")
+```
+
+Untuk menginterpretasikan plot kita bisa melihat pola titiknya apakah ada kecenderung naik atau turun pada suatu titik atau tidak. Jika melihat plot \ref{fig:sctr2} maka secara kasat mata kita bisa melihat bahwa ada kemungkinan korelasi negatif antar `psavert` dengan `uempmed.` Artinya, semakin tinggi `psavert` maka semakin rendah `uempmed`.
+
+## Plot hubungan dengan tiga variabel: `sctr3()`
+
+Jika sebelumnya kita hanya memliki dua variabel, maka fungsi `sctr3()` berikut mencoba untuk menempatkan 3 variabel dalam satu plot. Geometry yang digunakan tetap merupak point, sementara warna masing-masing point ditentukan oleh variabel yang bersifat kategorik. Jika variabel warna diisi dengan variabel kontinu maka legend-nya akan berubah menjadi gradasi warna. 
+
+```{r sctr3}
+library(dataplot)
+library(ggplot2)
+sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
+      title = "Lorem Ipsum is simply dummy text",
+      subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+      data_source = "www.kedata.online")
+```
+
+Untuk membaca kurang lebih sama dengan plot hubungan dengan dua variabel. Hanya saja, di plot diatas memberikan informasi tambahan yaitu terkait dengan kategori yang di representasikan dengan warna yang berbeda. Sehingga kita juga bisa menambahkan interpretasi. Misalnya, kecenderung korelasi positif terjadi, di mana ketika `poptotal` tinggi `popwhite` juga tinggi, khususnya di `IL`.
+
+## Plot hubungan dengan empat variabel: `sctr4()`
+
+Jika 3 varibel masih kurang memberikan informasi, maka kita bisa menempatkan 4 variabel sekaligus dalam sebuah plot. Dalam skema ggplot dan geom_point, hal tersebut dimungkinkan dengan menambahkan elemen warna dan besaran point yang diplotkan. Berikut adalah contohnya. 
+
+```{r sctr4}
+library(dataplot)
+library(ggplot2)
+sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "popdensity",
+      title = "Lorem Ipsum is simply dummy text",
+      subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+      data_source = "www.kedata.online")
+```
+
+Dari plot diatas, kita bisa melihat bahwa selain tetap melihat hubungan positif antara dua variabel kita juga bisa melihat variabel lain yang bisa menambah penjelasan dari hubungan yang terjadi. Berdasarkan plot, kita bisa mengatakan bahwa semakin banyak `poptotal` semakin tinggi `popwhite` serta semakin besar juga `popdensity`. Artinya, semakin tinggi populasi sebuah daerah, semakin banyak juga populasi kulit pitih dan semakin padat daerahnya.  
