@@ -1,6 +1,6 @@
 ---
 title: "How to use dataplot"
-author: "Ujang Fahmi"
+author: "Ujang Fahmi $ Frey"
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -14,7 +14,8 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE, warning = FALSE, message = FALSE,
+  collapse = TRUE, warning = FALSE, message = FALSE, 
+  fig.align='center', fig.width=7, fig.height=5,
   comment = "#>"
 )
 ```
@@ -55,7 +56,9 @@ Package ini memiliki 4 fungsi utama untuk membuat sebuah plot, yaitu: (1) `kedat
 
 1. `kedata_theme()`
 
-```{r, fig.align='center', fig.width=7, fig.height=5}
+Fungsi ini berguna untuk membuat tema bagian tengah plot agar menggunakan fonts, ukuran fonts, strip dan background yang sesuai. Semua dilakukan dibawah fungsi `theme()` dari `ggplot2`.
+
+```{r}
 library(dataplot)
 library(ggplot2)
 
@@ -67,7 +70,9 @@ p1
 
 2. `kedata_final1()`
 
-```{r, fig.align='center', fig.width=7, fig.height=5}
+Finalisasi ini digunakan untuk menambhakan logo kedata pada bagain pojok kanan atas. Dilakukan dengan menggunakan arrangement image dar `grid`.
+
+```{r}
 library(dataplot)
 library(ggplot2)
 
@@ -83,7 +88,9 @@ p2
 
 3. `kedata_final2()`
 
-```{r, fig.align='center', fig.width=7, fig.height=5}
+Fungsi finalisasi ini digunakan untuk menambahkan footer, logo, dan text pada bagian bawah plot. Selain itu, fungsi ini juga dilakukan untuk membuat judul dan subjudul rata kiri dengan text sumbu vertikal. 
+
+```{r}
 library(dataplot)
 library(ggplot2)
 
@@ -101,7 +108,9 @@ p3
 
 4. `kedata_custom()`
 
-```{r, fig.align='center', fig.width=7, fig.height=5}
+Fungsi ini digunakan untuk membuat finalisasi custom. Hal yang bisa dicustom saat ini pada bagian background footer dan logo yang digunakan juga pada bagian footer. 
+
+```{r}
 library(dataplot)
 library(ggplot2)
 
@@ -127,9 +136,9 @@ Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 
 2. Deviation Plot, lihat `vignette(deviation)`
 3. Ranking Plot, lihat `vignette(ranking)`
 4. Distribution Plot, lihat `vignette(distribution)`
-5. Composition Plot, lihat `vignette(composition)`
+5. Composition Plot, lihat `vignette(composition_plot)`
 6. Change Plot, lihat `vignette(change_plot)`
 7. Groups Plot, lihat `vignette(group_plot)`
 8. Spatial Plot, lihat `vignette(sp_plot)`
 
-Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi `vignette(nama_dokuemnatasi)` di bagian konsol. Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot. 
+Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi `vignette(nama_dokuemnatasi)` di bagian console Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot. 

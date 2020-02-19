@@ -1,6 +1,7 @@
 ## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
-  collapse = TRUE, warning = FALSE, message = FALSE,
+  collapse = TRUE, warning = FALSE, message = FALSE, 
+  fig.align='center', fig.width=7, fig.height=5,
   comment = "#>"
 )
 
@@ -10,7 +11,7 @@ knitr::opts_chunk$set(
 #  # type y on the console
 #  dataplot::import_fonts()
 
-## ---- fig.align='center', fig.width=7, fig.height=5---------------------------
+## -----------------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
 
@@ -19,7 +20,7 @@ p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
   kedata_theme()
 p1
 
-## ---- fig.align='center', fig.width=7, fig.height=5---------------------------
+## -----------------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
 
@@ -32,7 +33,7 @@ p2 <- kedata_final1(plotname = p1,
                     subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text")
 p2
 
-## ---- fig.align='center', fig.width=7, fig.height=5---------------------------
+## -----------------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
 
@@ -47,7 +48,7 @@ p3 <- kedata_final2(plotname = p1,
 
 p3
 
-## ---- fig.align='center', fig.width=7, fig.height=5---------------------------
+## -----------------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
 

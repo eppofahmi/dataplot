@@ -10,9 +10,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Ujang Fahmi" />
+<meta name="author" content="Ujang Fahmi $ Frey" />
 
-<meta name="date" content="2020-02-18" />
+<meta name="date" content="2020-02-19" />
 
 <title>How to use dataplot</title>
 
@@ -300,8 +300,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 <h1 class="title toc-ignore">How to use dataplot</h1>
-<h4 class="author">Ujang Fahmi</h4>
-<h4 class="date">2020-02-18</h4>
+<h4 class="author">Ujang Fahmi $ Frey</h4>
+<h4 class="date">2020-02-19</h4>
 
 
 <div id="TOC">
@@ -349,6 +349,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <ol style="list-style-type: decimal">
 <li><code>kedata_theme()</code></li>
 </ol>
+<p>Fungsi ini berguna untuk membuat tema bagian tengah plot agar menggunakan fonts, ukuran fonts, strip dan background yang sesuai. Semua dilakukan dibawah fungsi <code>theme()</code> dari <code>ggplot2</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(dataplot)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
@@ -360,6 +361,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <ol start="2" style="list-style-type: decimal">
 <li><code>kedata_final1()</code></li>
 </ol>
+<p>Finalisasi ini digunakan untuk menambhakan logo kedata pada bagain pojok kanan atas. Dilakukan dengan menggunakan arrangement image dar <code>grid</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(dataplot)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
@@ -375,6 +377,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <ol start="3" style="list-style-type: decimal">
 <li><code>kedata_final2()</code></li>
 </ol>
+<p>Fungsi finalisasi ini digunakan untuk menambahkan footer, logo, dan text pada bagian bawah plot. Selain itu, fungsi ini juga dilakukan untuk membuat judul dan subjudul rata kiri dengan text sumbu vertikal.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">library</span>(dataplot)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
@@ -392,6 +395,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <ol start="4" style="list-style-type: decimal">
 <li><code>kedata_custom()</code></li>
 </ol>
+<p>Fungsi ini digunakan untuk membuat finalisasi custom. Hal yang bisa dicustom saat ini pada bagian background footer dan logo yang digunakan juga pada bagian footer.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(dataplot)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"></a>
@@ -417,12 +421,12 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <li>Deviation Plot, lihat <code>vignette(deviation)</code></li>
 <li>Ranking Plot, lihat <code>vignette(ranking)</code></li>
 <li>Distribution Plot, lihat <code>vignette(distribution)</code></li>
-<li>Composition Plot, lihat <code>vignette(composition)</code></li>
+<li>Composition Plot, lihat <code>vignette(composition_plot)</code></li>
 <li>Change Plot, lihat <code>vignette(change_plot)</code></li>
 <li>Groups Plot, lihat <code>vignette(group_plot)</code></li>
 <li>Spatial Plot, lihat <code>vignette(sp_plot)</code></li>
 </ol>
-<p>Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi <code>vignette(nama_dokuemnatasi)</code> di bagian konsol. Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot.</p>
+<p>Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi <code>vignette(nama_dokuemnatasi)</code> di bagian console Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot.</p>
 </div>
 <div class="footnotes">
 <hr />

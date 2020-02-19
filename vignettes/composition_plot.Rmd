@@ -1,0 +1,45 @@
+---
+title: "Composition Plot"
+author: "Ujang Fahmi & Frey"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: 3
+vignette: >
+  %\VignetteIndexEntry{Composition Plot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, warning = FALSE, message = FALSE, fig.align='center', fig.width=7, fig.height=5,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+Plot komposisi digunakan untuk menunjukkan persentasi value dari masing-masing variabel kategori. Persentase sendiri di dapat dari value sebuah kategori dibagi total value seluruh kategori kali 100. Oleh karena itu, syarat pertama yang harus dipenuhi untuk membuat plot ini adalah memiliki data dengan minimal dua kolom, di mana masing-masing kolomnya merepresentasikan kategori dan jumlah.  
+
+## Pie Chart
+
+Pie chart, a classic way of showing the compositions is equivalent to the waffle chart in terms of the information conveyed. But is a slightly tricky to implement in ggplot2 using the coord_polar(). We create `pie_plot()` function as a ready to use pie chart function based on `ggplot2`.
+
+```{r}
+library(dataplot)
+library(ggplot2)
+
+df = data.frame("brand" = c("Samsung","Huawei","Apple","Xiaomi","OPPO"),
+                "share" = c(10,30,20,35,5))
+
+mycolor <- c("#55DDE0", "#33658A", "#2F4858", "#F6AE2D", "#F26419")
+
+pie_plot(data = df, x = "brand", y = "share", color = mycolor,
+         title = "Lorem Ipsum is simply dummy text",
+         subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+         data_source = "Sumber: www.kedata.online")
+
+```
+
