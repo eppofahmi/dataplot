@@ -65,3 +65,13 @@ p4 <- kedata_custom(plotname = p1,
 
 p4
 
+## -----------------------------------------------------------------------------
+rainfall <- dataplot::dataset
+
+hydrograph_plot(timeSeries = rainfall$`Date Time`,
+           streamflow = rainfall$Discharge,
+           precip = rainfall$`Rainfall depth (mm)`,
+           S1.col = "red",
+           left_label = "Discharge", S.units = "mm",
+           right_label = "Rainfall", P.units = "mm")
+

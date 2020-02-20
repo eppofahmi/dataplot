@@ -7,7 +7,7 @@
 #' @param subtitle character for plot subtitle
 #' @param data_source character for footer text
 #'
-#' @return
+#' @return ggplot and ggarrange object
 #'
 #' @examples
 #' \dontrun{

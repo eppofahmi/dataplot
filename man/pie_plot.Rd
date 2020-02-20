@@ -22,7 +22,7 @@ pie_plot(data, x, y, color, title, subtitle, data_source)
 \item{data_source}{character}
 }
 \value{
-ggplot ggarrange object
+ggplot and ggarrange object
 }
 \description{
 create pie chart form 2 variabel in kedata style. Percentage computed from

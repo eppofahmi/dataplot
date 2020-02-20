@@ -128,6 +128,25 @@ p4 <- kedata_custom(plotname = p1,
 p4
 ```
 
+## Bonus Plot 
+
+### Hydrograph
+ 
+Plot ini merupakan jenis plot yang sering dan khusus digunakan dalam dunia hydrologi. Fungsi `hydrograph_plot()` disini dibuat berdasarkan fungsi dari package `EcoHydRology`. Berikut adalah contohnya:
+
+```{r}
+rainfall <- dataplot::dataset
+
+hydrograph_plot(timeSeries = rainfall$`Date Time`,
+           streamflow = rainfall$Discharge,
+           precip = rainfall$`Rainfall depth (mm)`,
+           S1.col = "red",
+           left_label = "Discharge", S.units = "mm",
+           right_label = "Rainfall", P.units = "mm")
+```
+
+Plot tersebut dibuat dari data frame yang berisi 3 variabel. Di mana varaibel pertama harus merupakan data dengan jenis date time. 
+
 ## Jenis Plot
 
 Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 ggplot2 Visualizations](http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex)], dan postingan teman-teman R Community di Twitter^[[TidyTuesday](https://twitter.com/search?q=%23TidyTuseday&src=typed_query)]. Untuk mengetahui penggunaan masing-masing fungsi membuat plot, bisa melihat dokumentasi berikut:
@@ -141,4 +160,4 @@ Jenis plot yang dibuat di sini diadaptasi dari postingan `Prabhakaran`^[[Top 50 
 7. Groups Plot, lihat `vignette(group_plot)`
 8. Spatial Plot, lihat `vignette(sp_plot)`
 
-Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi `vignette(nama_dokuemnatasi)` di bagian console Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot. 
+Cara cepat untuk mengakses dokuemnatasi di atas adalah dengan menggunakan fungsi `vignette(nama_dokuemnatasi)` di bagian console Secara umum dokumentasi-dokumentasi diatas akan menjelaskan penggunaan dan konsep yang digunakan untuk membuat sebuah plot.

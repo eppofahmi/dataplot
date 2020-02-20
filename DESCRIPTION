@@ -8,6 +8,7 @@ Description: Paket ini bersisi tema umum dan tema untuk plot-plot
     yang sering digunakan dalam proses analisis data. Untuk bisa menggunakan 
     fungsi dengan lancar, sebaiknya di sistem anda sudah terisntal font Roboto,
     jika belum, bisa menggunakan fungsi dataplot::import_fonts().
+Depends: R (>= 3.5.0)
 Imports:
     cowplot,
     digest (>= 0.6.23),
@@ -27,6 +28,8 @@ LazyData: true
 RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 Suggests: 
+    devtools,
     knitr,
     rmarkdown,
+    roxygen2,
     testthat

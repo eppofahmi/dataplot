@@ -16,7 +16,7 @@ cor_plot(data, title, subtitle, data_source)
 \item{data_source}{character for footer text}
 }
 \value{
-
+ggplot and ggarrange object
 }
 \description{
 Membuat plot korelasi antar variabel

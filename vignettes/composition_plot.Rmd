@@ -25,7 +25,7 @@ Plot komposisi digunakan untuk menunjukkan persentasi value dari masing-masing v
 
 ## Pie Chart
 
-Pie chart, a classic way of showing the compositions is equivalent to the waffle chart in terms of the information conveyed. But is a slightly tricky to implement in ggplot2 using the coord_polar(). We create `pie_plot()` function as a ready to use pie chart function based on `ggplot2`.
+PIe chart merupakan plot klasik yang sering digunakan. Fungsi `pie_plot()` di sini mengambil dua variabel dari sebuah data frame yang berisi dua variabel (kategori dan numerik). Kami merepresentasikannya dalam plot sebagai persentase yang dihasilkan dari value masing-masing kategori dibagi total value kali 100. Oleh karena itu, untuk membuat pie chart dengan fungsi ini anda hanya perlu data seperti objek df yang dihasilkan dari skrip dibawah ini. 
 
 ```{r}
 library(dataplot)
@@ -43,3 +43,9 @@ pie_plot(data = df, x = "brand", y = "share", color = mycolor,
 
 ```
 
+
+## Waffle Chart
+
+Waffle charts is a nice way of showing the categorical composition of the total population. Though there is no direct function, it can be articulated by smartly maneuvering the ggplot2 using geom_tile() function. The below template should help you create your own waffle.
+
+Plot Waffle merupakan cara lain untuk menunjukkan komposisi kategorikal dari total populasi. Plot ini bisa menjadi alternatif dari pie jika plot tersebut dianggap terlalu umum. Di dalam `ggplot2` plot waffle bisa dibuat dengan menggunakan fungsi `geom_tile()` . Berikut adalah contohnya. 
