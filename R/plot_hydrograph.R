@@ -48,7 +48,7 @@
 #' dev.off()
 #' }
 #' @export
-hydrograph_plot <-
+plot_hydrograph <-
   function (input = matrix(ncol = 2, nrow = 2),
             streamflow = input[,
                                2],

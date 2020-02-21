@@ -68,7 +68,7 @@ p4
 ## -----------------------------------------------------------------------------
 rainfall <- dataplot::dataset
 
-hydrograph_plot(timeSeries = rainfall$`Date Time`,
+plot_hydrograph(timeSeries = rainfall$`Date Time`,
            streamflow = rainfall$Discharge,
            precip = rainfall$`Rainfall depth (mm)`,
            S1.col = "red",

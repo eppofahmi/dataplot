@@ -14,14 +14,14 @@
 #' \dontrun{
 #' library(dataplot)
 #' library(ggplot2)
-#' sctr3(data = midwest, x = "area", y = "poptotal", color = "state",
+#' plot_sctr3(data = midwest, x = "area", y = "poptotal", color = "state",
 #'       title = "Lorem Ipsum is simply dummy text",
 #'       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'       data_source = "www.kedata.online")
 #' }
 #'
 #' @export
-sctr3 <- function(data, x, y, color, title, subtitle, data_source) {
+plot_sctr3 <- function(data, x, y, color, title, subtitle, data_source) {
   data <- data[, c(x, y, color)]
   colnames(data) <- c("col1", "col2", "col3")
 

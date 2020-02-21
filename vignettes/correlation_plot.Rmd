@@ -33,7 +33,7 @@ Hubungan antara dua variabel dapat direpresentasikan menggunakan scatter plot. U
 library(dataplot)
 library(ggplot2)
 
-sctr2(data = economics, x = "psavert", y = "uempmed",
+plot_sctr2(data = economics, x = "psavert", y = "uempmed",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -48,7 +48,7 @@ Jika sebelumnya kita hanya memliki dua variabel, maka fungsi `sctr3()` berikut m
 ```{r sctr3}
 library(dataplot)
 library(ggplot2)
-sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
+plot_sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -63,7 +63,7 @@ Jika 3 varibel masih kurang memberikan informasi, maka kita bisa menempatkan 4 v
 ```{r sctr4}
 library(dataplot)
 library(ggplot2)
-sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "popdensity",
+plot_sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "popdensity",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -79,7 +79,7 @@ Jika anda ingin memembuat dua plot dalam satu gambar untuk menujukkan hubungan s
 library(dataplot)
 library(ggplot2)
 
-p1 <- mrg_plot(data = economics, x = "psavert", y = "uempmed",
+p1 <- plot_mrg(data = economics, x = "psavert", y = "uempmed",
               title = "Lorem Ipsum is simply dummy text",
               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
               data_source = "www.kedata.online",
@@ -98,7 +98,7 @@ Korelasi antar variabel juga bisa ditampilkan dalam sebuah plot secara langsung.
 library(dataplot)
 library(ggplot2)
 
-cor_plot(data = mtcars,
+plot_cor(data = mtcars,
          title = "Lorem Ipsum is simply dummy text",
          subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
          data_source = "Sumber Data")

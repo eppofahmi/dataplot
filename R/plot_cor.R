@@ -14,13 +14,13 @@
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' cor_plot(data = mtcars,
+#' plot_cor(data = mtcars,
 #'          title = "Lorem Ipsum is simply dummy text",
 #'          subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'          data_source = "Sumber Data")
 #' }
 #' @export
-cor_plot <- function(data, title, subtitle, data_source) {
+plot_cor <- function(data, title, subtitle, data_source) {
   corr <- round(cor(data), 1)
 
   p1 <- ggcorrplot::ggcorrplot(

@@ -25,13 +25,13 @@
 #'
 #' mycolor <- c("#55DDE0", "#33658A", "#2F4858", "#F6AE2D", "#F26419")
 #'
-#' pie_plot(data = df, x = "brand", y = "share", color = mycolor,
+#' plot_pie(data = df, x = "brand", y = "share", color = mycolor,
 #'          title = "Lorem Ipsum is simply dummy text",
 #'          subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'          data_source = "Sumber: www.kedata.online")
 #' }
 #' @export
-pie_plot <- function(data, x, y, color, title, subtitle, data_source) {
+plot_pie <- function(data, x, y, color, title, subtitle, data_source) {
   # Data
   data <- data[, c(x, y)]
   colnames(data) <- c("col1", "col2")

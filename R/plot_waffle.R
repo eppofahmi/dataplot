@@ -21,13 +21,13 @@
 #'                 .Names = c("region","ncases"),
 #'                 row.names = c(NA, -5L), class = "data.frame")
 #'
-#' waffle_plot(data = df, x = "region", y = "ncases", ndeep = 10,
+#' plot_waffle(data = df, x = "region", y = "ncases", ndeep = 10,
 #'             title = "Lorem Ipsum is simply dummy text",
 #'             subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'             data_source = "www.kedata.online")
 #' }
 #' @export
-waffle_plot <-
+plot_waffle <-
   function(data,
            x,
            y,

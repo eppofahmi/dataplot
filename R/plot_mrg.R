@@ -18,7 +18,7 @@
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' p1 <- mrg_plot(data = economics, x = "psavert", y = "uempmed",
+#' p1 <- plot_mrg(data = economics, x = "psavert", y = "uempmed",
 #'               title = "Lorem Ipsum is simply dummy text",
 #'               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
 #'               data_source = "www.kedata.online",
@@ -27,7 +27,7 @@
 #' p1
 #' }
 #' @export
-mrg_plot <-
+plot_mrg <-
   function(data,
            x,
            y,

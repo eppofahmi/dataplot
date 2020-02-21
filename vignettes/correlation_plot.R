@@ -8,7 +8,7 @@ knitr::opts_chunk$set(
 library(dataplot)
 library(ggplot2)
 
-sctr2(data = economics, x = "psavert", y = "uempmed",
+plot_sctr2(data = economics, x = "psavert", y = "uempmed",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -16,7 +16,7 @@ sctr2(data = economics, x = "psavert", y = "uempmed",
 ## ----sctr3--------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
-sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
+plot_sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -24,7 +24,7 @@ sctr3(data = midwest, x = "poptotal", y = "popwhite", color = "state",
 ## ----sctr4--------------------------------------------------------------------
 library(dataplot)
 library(ggplot2)
-sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "popdensity",
+plot_sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "popdensity",
       title = "Lorem Ipsum is simply dummy text",
       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
       data_source = "www.kedata.online")
@@ -33,7 +33,7 @@ sctr4(data = midwest, x = "poptotal", y = "popwhite", color = "state", size = "p
 library(dataplot)
 library(ggplot2)
 
-p1 <- mrg_plot(data = economics, x = "psavert", y = "uempmed",
+p1 <- plot_mrg(data = economics, x = "psavert", y = "uempmed",
               title = "Lorem Ipsum is simply dummy text",
               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
               data_source = "www.kedata.online",
@@ -45,7 +45,7 @@ p1
 library(dataplot)
 library(ggplot2)
 
-cor_plot(data = mtcars,
+plot_cor(data = mtcars,
          title = "Lorem Ipsum is simply dummy text",
          subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
          data_source = "Sumber Data")
