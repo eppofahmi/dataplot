@@ -46,8 +46,6 @@ pie_plot(data = df, x = "brand", y = "share", color = mycolor,
 
 ## Waffle Chart
 
-Waffle charts is a nice way of showing the categorical composition of the total population. Though there is no direct function, it can be articulated by smartly maneuvering the ggplot2 using geom_tile() function. The below template should help you create your own waffle.
-
 Plot Waffle merupakan cara lain untuk menunjukkan komposisi kategorikal dari total populasi. Plot ini bisa menjadi alternatif dari pie jika plot tersebut dianggap terlalu umum. Di dalam `ggplot2` plot waffle bisa dibuat dengan menggunakan fungsi `geom_tile()` . Berikut adalah contohnya. 
 
 ```{r}
