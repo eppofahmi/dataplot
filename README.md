@@ -10,70 +10,27 @@ Tema dan jenis plot umum yang digunakan oleh Kedata Indonesia
 # Install 
 Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
 
-# Correlation
 
-1. Scatterplot: sctr(), sctr3()
-2. Scatterplot With Encircling
-3. Marginal Histogram/Boxplot
-4. Correlogram
+## Waffle Chart
 
-# Deviation
+Waffle charts is a nice way of showing the categorical composition of the total population. Though there is no direct function, it can be articulated by smartly maneuvering the ggplot2 using geom_tile() function. The below template should help you create your own waffle.
 
-1. Diverging Bars
-2. Diverging Lollipop Chart
-3. Diverging Dot Plot
-4. Area Chart
+Plot Waffle merupakan cara lain untuk menunjukkan komposisi kategorikal dari total populasi. Plot ini bisa menjadi alternatif dari pie jika plot tersebut dianggap terlalu umum. Di dalam `ggplot2` plot waffle bisa dibuat dengan menggunakan fungsi `geom_tile()` . Berikut adalah contohnya. 
 
-# Ranking
+```{r}
+library(dataplot)
+library(ggplot2)
 
-1. Ordered Bar Chart
-2. Lollipop Chart
-3. Dot Plot
-4. Slope Chart
-5. Dumbbell Plot
+df <- structure(list(region = c("Africa", "Asia", "Latin America",
+                                "Other", "US-born"),
+                     ncases = c(36L, 34L, 56L, 2L, 44L)),
+                .Names = c("region","ncases"),
+                row.names = c(NA, -5L), class = "data.frame")
 
-# Distribution
+waffle_plot(data = df, x = "region", y = "ncases", ndeep = 10,
+            title = "Lorem Ipsum is simply dummy text",
+            subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+            data_source = "www.kedata.online")
+```
 
-1. Histogram
-2. Density Plot
-3. Box Plot
-4. Dot + Box Plot
-5. Tufte Boxplot
-6. Violin Plot
-7. Population Pyramid
-
-# Composition
-
-1. Waffle Chart
-2. Pie Chart
-3. Treemap
-4. Bar Chart
-
-# Change
-## Time Series Plots
-
-1. From a Data Frame
-2. Format to Monthly X Axis
-3. Format to Yearly X Axis
-4. From Long Data Format
-5. From Wide Data Format
-
-## Stacked Area Chart
-## Calendar Heat Map
-## Slope Chart
-## Seasonal Plot
-
-# Groups
-
-1. Dendrogram
-2. Clusters
-
-# Spatial
-
-1. Open Street Map
-2. Google Road Map
-3. Google Hybrid Map
-
-# Referensi 
-
-1. http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.htmlex
+Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya dalam waffle chart di representasikan dalam bentuk potingan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan kondisi masing-masing kategori.
