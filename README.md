@@ -13,8 +13,6 @@ Install from GitHub: `devtools::install_github("eppofahmi/dataplot")`
 
 ## Waffle Chart
 
-Waffle charts is a nice way of showing the categorical composition of the total population. Though there is no direct function, it can be articulated by smartly maneuvering the ggplot2 using geom_tile() function. The below template should help you create your own waffle.
-
 Plot Waffle merupakan cara lain untuk menunjukkan komposisi kategorikal dari total populasi. Plot ini bisa menjadi alternatif dari pie jika plot tersebut dianggap terlalu umum. Di dalam `ggplot2` plot waffle bisa dibuat dengan menggunakan fungsi `geom_tile()` . Berikut adalah contohnya. 
 
 ```{r}
@@ -33,6 +31,6 @@ waffle_plot(data = df, x = "region", y = "ncases", ndeep = 10,
             data_source = "www.kedata.online")
 ```
 
-![](https://github.com/eppofahmi/dataplot/blob/master/man/figures/waffle.png)
+![](https://raw.githubusercontent.com/eppofahmi/dataplot/master/man/figures/waffle.png)
 
 Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya dalam waffle chart di representasikan dalam bentuk potingan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan kondisi masing-masing kategori.
