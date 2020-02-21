@@ -67,6 +67,7 @@ This function can now take NA values. If you chose to use the input argument but
 }
 \examples{
 \dontrun{
+png("data/test.png")
 rainfall <- dataplot::dataset
 
 hydrograph_plot(timeSeries = rainfall$`Date Time`,
@@ -75,5 +76,6 @@ hydrograph_plot(timeSeries = rainfall$`Date Time`,
            S1.col = "red",
            left_label = "Discharge", S.units = "mm",
            right_label = "Rainfall", P.units = "mm")
+dev.off()
 }
 }

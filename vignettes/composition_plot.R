@@ -19,3 +19,18 @@ pie_plot(data = df, x = "brand", y = "share", color = mycolor,
          data_source = "Sumber: www.kedata.online")
 
 
+## -----------------------------------------------------------------------------
+library(dataplot)
+library(ggplot2)
+
+df <- structure(list(region = c("Africa", "Asia", "Latin America",
+                                "Other", "US-born"),
+                     ncases = c(36L, 34L, 56L, 2L, 44L)),
+                .Names = c("region","ncases"),
+                row.names = c(NA, -5L), class = "data.frame")
+
+waffle_plot(data = df, x = "region", y = "ncases", ndeep = 10,
+            title = "Lorem Ipsum is simply dummy text",
+            subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+            data_source = "www.kedata.online")
+

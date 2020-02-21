@@ -30,7 +30,7 @@ kedata_theme <- function() {
   ggplot2::theme(legend.position = "top",
                  legend.title = ggplot2::element_blank(),
                  legend.text = ggplot2::element_text(size = 8, color = "#323441"),
-                 legend.text.align = 0.5,
+                 # legend.text.align = 0.5,
                  legend.justification = c("right", "top"),
                  legend.box.just = "left",
                  legend.margin = ggplot2::margin(t = 0, r = 0, b = 0, l = 0, unit = "line"),
