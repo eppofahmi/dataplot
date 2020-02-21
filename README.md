@@ -1,3 +1,6 @@
+# dataplot <img src="man/figures/sticker.png" align="right" width=150/>
+
+
 [![Travis-CI Build Status](https://travis-ci.org/eppofahmi/dataplot.svg?branch=master)](https://travis-ci.org/eppofahmi/dataplot)
 
 # dataplot
