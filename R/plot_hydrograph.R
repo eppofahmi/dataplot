@@ -36,10 +36,12 @@
 #'
 #' @examples
 #' \dontrun{
+#' library (dataplot)
+#'
 #' png("data/test.png")
 #' rainfall <- dataplot::dataset
 #'
-#' hydrograph_plot(timeSeries = rainfall$`Date Time`,
+#' plot_hydrograph(timeSeries = rainfall$`Date Time`,
 #'            streamflow = rainfall$Discharge,
 #'            precip = rainfall$`Rainfall depth (mm)`,
 #'            S1.col = "red",
@@ -50,8 +52,7 @@
 #' @export
 plot_hydrograph <-
   function (input = matrix(ncol = 2, nrow = 2),
-            streamflow = input[,
-                               2],
+            streamflow = input[, 2],
             timeSeries = input[, 1],
             streamflow2 = NULL,
             precip = NULL,
@@ -82,6 +83,7 @@ plot_hydrograph <-
           na.omit(precip[begin:endindex])
         ))),
         xaxt = "n"
+        # panel.first = grid(col = "grey", lty = 2)
       )
       axis(
         side = 3,
@@ -155,16 +157,16 @@ plot_hydrograph <-
       ylim = c(0, 1.2 * max(
         na.omit(streamflow[begin:endindex]), na.omit(streamflow2[begin:endindex])
       )),
-      panel.first = grid(
-        ny = NULL,
-        nx = NULL,
-        col = "lightgray",
-        lty = 2,
-        lwd = par("lwd"),
-        equilogs = FALSE
-      ),
+      # panel.first = grid(
+      #   nx = NULL,
+      #   ny = NULL,
+      #   col = "lightgray",
+      #   lty = 2,
+      #   lwd = par("lwd"),
+      #   equilogs = TRUE
+      #   ),
       axes = FALSE
-    )
+      )
     #mtext (expression(paste("                              ", " (" , m^3/s, ")", sep="")), 2,3)
     if (S.units == "m3/s" | S.units == "m3s") {
       mtext (expression(paste(" (" , m ^ 3 / s, ")", sep = "")), 2, 1.5)
@@ -200,12 +202,13 @@ plot_hydrograph <-
       )
     }
     axis(
+      # line = 24,
       side = 1,
-      at = seq(1, (endindex - begin + 1), length = 14),
+      las= 1,
+      at = seq(0, (endindex - begin + 1), length = 24),
       pos = 0,
-      labels = format(timeSeries[seq(begin, endindex,
-                                     length = 14)], "%d-%b-%y")
-    )
-
+      labels = format(timeSeries[seq(begin, endindex, length = 24)], "%y-%m-%d %H:%M")
+      )
+    abline(h = 1:4,  lty = 2, col = "grey")
     axis(side = 2, pos = 0)
   }
