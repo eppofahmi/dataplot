@@ -20,6 +20,7 @@ Imports:
     ggExtra (>= 0.9),
     grid (>= 3.6.0),
     magick (>= 2.3),
+    plotly (>= 4.9.1),
     png (>= 0.1.7),
     tidyr (>= 1.0.2)
 License: GPL-2

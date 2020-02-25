@@ -74,7 +74,7 @@ plot_hydrograph <-
       streamflow <- input[, 3]
     }
     if (!is.null(precip))  {
-      par(mar = c(3, 5, 1, 4))
+      par(mar = c(8, 5, 1, 4))
       barplot(
         precip[begin:endindex],
         yaxt = "n",
@@ -146,6 +146,7 @@ plot_hydrograph <-
       par(new = T)
     }
 
+    # Line plot
     plot(
       streamflow[begin:endindex],
       col = S1.col,
@@ -157,14 +158,6 @@ plot_hydrograph <-
       ylim = c(0, 1.2 * max(
         na.omit(streamflow[begin:endindex]), na.omit(streamflow2[begin:endindex])
       )),
-      # panel.first = grid(
-      #   nx = NULL,
-      #   ny = NULL,
-      #   col = "lightgray",
-      #   lty = 2,
-      #   lwd = par("lwd"),
-      #   equilogs = TRUE
-      #   ),
       axes = FALSE
       )
     #mtext (expression(paste("                              ", " (" , m^3/s, ")", sep="")), 2,3)
@@ -204,11 +197,24 @@ plot_hydrograph <-
     axis(
       # line = 24,
       side = 1,
-      las= 1,
-      at = seq(0, (endindex - begin + 1), length = 24),
+      las= 3,
+      at = seq(0, (endindex - begin + 1), length = 12),
       pos = 0,
-      labels = format(timeSeries[seq(begin, endindex, length = 24)], "%y-%m-%d %H:%M")
+      labels = format(timeSeries[seq(begin, endindex, length = 12)], "%Y-%m-%d %H:%M")
       )
-    abline(h = 1:4,  lty = 2, col = "grey")
+    # axis(
+    #   side = 3,
+    #   las= 1,
+    #   at = seq(0, (endindex - begin + 1), length = 12),
+    #   pos = 0,
+    #   labels = format(timeSeries[seq(begin, endindex, length = 12)], "%H:%M")
+    #   )
+    abline(h = 1:4,
+           lty = 2, col = "grey")
     axis(side = 2, pos = 0)
   }
+
+
+# library(lubridate)
+# date1 <- ymd("2013-08-01")
+# abline(v=decimal_date(date1))
