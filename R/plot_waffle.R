@@ -15,16 +15,23 @@
 #' library(ggplot2)
 #' library(dataplot)
 #'
-#' df <- structure(list(region = c("Africa", "Asia", "Latin America",
-#'                                 "Other", "US-born"),
-#'                      ncases = c(36L, 34L, 56L, 2L, 44L)),
-#'                 .Names = c("region","ncases"),
-#'                 row.names = c(NA, -5L), class = "data.frame")
+#' df <- structure(list(
+#'   region = c(
+#'     "Africa", "Asia", "Latin America",
+#'     "Other", "US-born"
+#'   ),
+#'   ncases = c(36L, 34L, 56L, 2L, 44L)
+#' ),
+#' .Names = c("region", "ncases"),
+#' row.names = c(NA, -5L), class = "data.frame"
+#' )
 #'
-#' plot_waffle(data = df, x = "region", y = "ncases", ndeep = 10,
-#'             title = "Lorem Ipsum is simply dummy text",
-#'             subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'             data_source = "www.kedata.online")
+#' plot_waffle(
+#'   data = df, x = "region", y = "ncases", ndeep = 10,
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "www.kedata.online"
+#' )
 #' }
 #' @export
 plot_waffle <-
@@ -60,7 +67,7 @@ plot_waffle <-
     wp <- ggplot2::ggplot(tb4waffles, ggplot2::aes(x = x, y = y, fill = region)) +
       ggplot2::geom_tile(color = "white") + # The color of the lines between tiles
       ggplot2::scale_x_continuous(expand = c(0, 0)) +
-      ggplot2::scale_y_continuous(expand = c(0, 0), trans = 'reverse') +
+      ggplot2::scale_y_continuous(expand = c(0, 0), trans = "reverse") +
       ggplot2::scale_fill_brewer(palette = "Set3") +
       kedata_theme()
 

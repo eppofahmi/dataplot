@@ -30,16 +30,18 @@ Menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 library(dataplot)
 library(ggplot2)
 
-p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+p1 <- ggplot(data = economics, aes(x = pce, y = pop)) +
   geom_line() +
   kedata_theme()
 
-kedata_custom(plotname = p1,
-              footer_col = "grey",
-              logo = 'inst/extdata/logo/logokedata.png',
-              title = "Lorem Ipsum is simply dummy text",
-              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-              data_source = "www.kedata.online")
+kedata_custom(
+  plotname = p1,
+  footer_col = "grey",
+  logo = "inst/extdata/logo/logokedata.png",
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "www.kedata.online"
+)
 }
 
 }

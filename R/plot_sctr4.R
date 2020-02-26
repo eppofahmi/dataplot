@@ -15,15 +15,16 @@
 #' \dontrun{
 #' library(dataplot)
 #' library(ggplot2)
-#' plot_sctr4(data = midwest, x = "area", y = "poptotal", color = "state", size = "popdensity",
-#'       title = "Lorem Ipsum is simply dummy text",
-#'       subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'       data_source = "www.kedata.online")
+#' plot_sctr4(
+#'   data = midwest, x = "area", y = "poptotal", color = "state", size = "popdensity",
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "www.kedata.online"
+#' )
 #' }
 #'
 #' @export
 plot_sctr4 <- function(data, x, y, color, size, title, subtitle, data_source) {
-
   data <- data[, c(x, y, color, size)]
   colnames(data) <- c("col1", "col2", "col3", "col4")
 
@@ -32,8 +33,10 @@ plot_sctr4 <- function(data, x, y, color, size, title, subtitle, data_source) {
     ggplot2::labs(x = paste0(x), y = paste0(y)) +
     dataplot::kedata_theme()
 
-  kedata_final2(plotname = p1,
-                title = paste0(title),
-                subtitle = paste0(subtitle),
-                data_source = paste0(data_source))
-  }
+  kedata_final2(
+    plotname = p1,
+    title = paste0(title),
+    subtitle = paste0(subtitle),
+    data_source = paste0(data_source)
+  )
+}

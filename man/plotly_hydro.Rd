@@ -27,15 +27,17 @@ Create hydroplot using plotly
 }
 \examples{
 \dontrun{
-library (dataplot)
+library(dataplot)
 library(plotly)
 
 rainfall <- dataplot::dataset
 
-plotly_hydro(df = rainfall, dates = rainfall$`Date Time`,
-                  flow = rainfall$Discharge,
-                  rain = rainfall$`Rainfall depth (mm)`,
-                  right_label = "rainfall",
-                  left_label = "discharge")
+plotly_hydro(
+  df = rainfall, dates = rainfall$`Date Time`,
+  flow = rainfall$Discharge,
+  rain = rainfall$`Rainfall depth (mm)`,
+  right_label = "rainfall",
+  left_label = "discharge"
+)
 }
 }

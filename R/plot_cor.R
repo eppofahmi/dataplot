@@ -14,10 +14,12 @@
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' plot_cor(data = mtcars,
-#'          title = "Lorem Ipsum is simply dummy text",
-#'          subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'          data_source = "Sumber Data")
+#' plot_cor(
+#'   data = mtcars,
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "Sumber Data"
+#' )
 #' }
 #' @export
 plot_cor <- function(data, title, subtitle, data_source) {

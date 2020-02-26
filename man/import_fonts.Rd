@@ -15,5 +15,4 @@ Import fonts Roboto untuk kebutuhan pembuatan judul dan
 }
 \examples{
 import_fonts()
-
 }

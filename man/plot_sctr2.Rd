@@ -30,10 +30,12 @@ Membuat scater dengan dua variabel dalam gaya kedata
 library(dataplot)
 library(ggplot2)
 
-plot_sctr2(data = economics, x = "psavert", y = "uempmed",
-      title = "Lorem Ipsum is simply dummy text",
-      subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-      data_source = "www.kedata.online")
+plot_sctr2(
+  data = economics, x = "psavert", y = "uempmed",
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "www.kedata.online"
+)
 
 ggsave(filename = "tes.png", dpi = 300, height = 6, width = 9)
 }

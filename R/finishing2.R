@@ -1,22 +1,23 @@
-create_footer <- function (source_name) {
-  #Make the footer
+create_footer <- function(source_name) {
+  # Make the footer
   footer <-
     grid::grobTree(
-      grid::rectGrob(gp = grid::gpar(fill = '#323441', lwd = 0)),
+      grid::rectGrob(gp = grid::gpar(fill = "#323441", lwd = 0)),
       grid::textGrob(
         source_name,
         x = 0.022,
         hjust = 0,
         gp = grid::gpar(
           fontsize = 10,
-          family = 'Roboto',
-          col = 'white'
+          family = "Roboto",
+          col = "white"
         )
       ),
       grid::rasterGrob(png::readPNG(
         system.file("extdata/logo/", "logokedata2.png", package = "dataplot")
       ),
-      x = 0.912)
+      x = 0.912
+      )
     )
   return(footer)
 }
@@ -37,14 +38,16 @@ create_footer <- function (source_name) {
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+#' p1 <- ggplot(data = economics, aes(x = pce, y = pop)) +
 #'   geom_line() +
 #'   kedata_theme()
 #'
-#' kedata_final2(plotname = p1,
-#'               title = "Lorem Ipsum is simply dummy text",
-#'               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'               data_source = "Sumber Data")
+#' kedata_final2(
+#'   plotname = p1,
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "Sumber Data"
+#' )
 #' }
 #'
 #' @export
@@ -56,7 +59,7 @@ kedata_final2 <- function(plotname,
   title <- cowplot::ggdraw() +
     cowplot::draw_label(
       paste0(toupper(title)),
-      fontface = 'bold',
+      fontface = "bold",
       x = 0,
       hjust = 0,
       fontfamily = "Roboto",
@@ -65,7 +68,7 @@ kedata_final2 <- function(plotname,
     ) +
     cowplot::draw_label(
       paste0(subtitle),
-      fontface = 'plain',
+      fontface = "plain",
       x = 0,
       hjust = 0,
       vjust = 2.5,
@@ -77,9 +80,10 @@ kedata_final2 <- function(plotname,
   # Ploting title and subtitel
   p1 <-
     cowplot::plot_grid(title,
-                       plotname,
-                       ncol = 1,
-                       rel_heights = c(0.1, 1))
+      plotname,
+      ncol = 1,
+      rel_heights = c(0.1, 1)
+    )
   # Footer and data source
   footer <- create_footer(source_name = paste0(data_source))
   # Final plot

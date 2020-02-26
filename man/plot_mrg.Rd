@@ -41,11 +41,13 @@ Membuat marginal plot untuk menunjukkan distribusi variabel
 library(dataplot)
 library(ggplot2)
 
-p1 <- plot_mrg(data = economics, x = "psavert", y = "uempmed",
-              title = "Lorem Ipsum is simply dummy text",
-              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-              data_source = "www.kedata.online",
-              mg_type = "histogram")
+p1 <- plot_mrg(
+  data = economics, x = "psavert", y = "uempmed",
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "www.kedata.online",
+  mg_type = "histogram"
+)
 
 p1
 }

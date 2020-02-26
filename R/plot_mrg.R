@@ -18,11 +18,13 @@
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' p1 <- plot_mrg(data = economics, x = "psavert", y = "uempmed",
-#'               title = "Lorem Ipsum is simply dummy text",
-#'               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'               data_source = "www.kedata.online",
-#'               mg_type = "histogram")
+#' p1 <- plot_mrg(
+#'   data = economics, x = "psavert", y = "uempmed",
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "www.kedata.online",
+#'   mg_type = "histogram"
+#' )
 #'
 #' p1
 #' }
@@ -47,9 +49,10 @@ plot_mrg <-
 
     p1 <-
       ggExtra::ggMarginal(p1,
-                 type = paste0(mg_type),
-                 fill = "transparent",
-                 col = "#274374")
+        type = paste0(mg_type),
+        fill = "transparent",
+        col = "#274374"
+      )
 
     kedata_final2(
       plotname = p1,

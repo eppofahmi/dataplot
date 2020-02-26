@@ -63,5 +63,10 @@ plot_waffle(data = df, x = "region", y = "ncases", ndeep = 10,
             subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
             data_source = "www.kedata.online")
 ```
+Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya saja, porsi dalam waffle chart di representasikan dalam bentuk potongan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan porsi per kategori. 
 
-Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya dalam waffle chart di representasikan dalam bentuk potingan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan kondisi masing-masing kategori. 
+## Treemap
+
+
+
+

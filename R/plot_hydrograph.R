@@ -9,6 +9,8 @@
 #' @importFrom graphics mtext
 #' @importFrom graphics par
 #' @importFrom graphics plot
+#' @importFrom graphics abline
+#' @importFrom graphics abline
 #' @importFrom stats na.omit
 #'
 #' @param input This is a data frame with at least two columns of data First column: Must be a time/date series Second column: If including precip, precip. Otherwise, streamflow - AND do not include any other columns Third column: (Only include if precip is in the second column) First streamflow dataset Forth column: (optional) Second streamflow dataset
@@ -30,50 +32,51 @@
 #'
 #' @return ploted data object
 #'
-#' @warning The date series should be continuous and evenly spaced. If not, the dates will not line up accurately on the x-axis.
-#'
 #' @note This function can now take NA values. If you chose to use the input argument but are not including precipitation, input must only have two columns - you will need to add the second streamflow dataset using the "streamflow2" argument.
 #'
 #' @examples
 #' \dontrun{
-#' library (dataplot)
+#' library(dataplot)
 #'
 #' png("data/test.png")
 #' rainfall <- dataplot::dataset
 #'
-#' plot_hydrograph(timeSeries = rainfall$`Date Time`,
-#'            streamflow = rainfall$Discharge,
-#'            precip = rainfall$`Rainfall depth (mm)`,
-#'            S1.col = "red",
-#'            left_label = "Discharge", S.units = "mm",
-#'            right_label = "Rainfall", P.units = "mm")
+#' plot_hydrograph(
+#'   timeSeries = rainfall$`Date Time`,
+#'   streamflow = rainfall$Discharge,
+#'   precip = rainfall$`Rainfall depth (mm)`,
+#'   S1.col = "red",
+#'   left_label = "Discharge", S.units = "mm",
+#'   right_label = "Rainfall", P.units = "mm"
+#' )
 #' dev.off()
 #' }
 #' @export
 plot_hydrograph <-
-  function (input = matrix(ncol = 2, nrow = 2),
-            streamflow = input[, 2],
-            timeSeries = input[, 1],
-            streamflow2 = NULL,
-            precip = NULL,
-            begin = 1,
-            endindex = length(streamflow),
-            P.units = "",
-            S.units = "",
-            S1.col = "black",
-            S2.col = "red",
-            left_label = "Streamflow",
-            right_label,
-            streamflow3 = NULL,
-            streamflow4 = NULL,
-            precip2 = NULL) {
-    if (is.null(streamflow2) & (ncol(input) > 3))
+  function(input = matrix(ncol = 2, nrow = 2),
+           streamflow = input[, 2],
+           timeSeries = input[, 1],
+           streamflow2 = NULL,
+           precip = NULL,
+           begin = 1,
+           endindex = length(streamflow),
+           P.units = "",
+           S.units = "",
+           S1.col = "black",
+           S2.col = "red",
+           left_label = "Streamflow",
+           right_label,
+           streamflow3 = NULL,
+           streamflow4 = NULL,
+           precip2 = NULL) {
+    if (is.null(streamflow2) & (ncol(input) > 3)) {
       streamflow2 <- input[, 4]
+    }
     if (is.null(precip) & (ncol(input) > 2)) {
       precip <- input[, 2]
       streamflow <- input[, 3]
     }
-    if (!is.null(precip))  {
+    if (!is.null(precip)) {
       par(mar = c(8, 5, 1, 4))
       barplot(
         precip[begin:endindex],
@@ -97,10 +100,10 @@ plot_hydrograph <-
           na.omit(precip[begin:endindex])
         ) +
           1), length = (1 + ifelse(
-            floor(max(na.omit(precip[begin:endindex])) +
-                    1) < 10, floor(max(na.omit(precip[begin:endindex])) + 1),
-            4
-          ))),
+          floor(max(na.omit(precip[begin:endindex])) +
+            1) < 10, floor(max(na.omit(precip[begin:endindex])) + 1),
+          4
+        ))),
         labels = as.integer(seq(0, floor(
           max(na.omit(precip[begin:endindex])) +
             1
@@ -109,9 +112,10 @@ plot_hydrograph <-
             na.omit(precip[begin:endindex])
           ) +
             1) < 10, floor(max(
-              na.omit(precip[begin:endindex])
-            ) + 1),
-          4)
+            na.omit(precip[begin:endindex])
+          ) + 1),
+          4
+          )
         )))
       )
       if (P.units == "") {
@@ -122,7 +126,7 @@ plot_hydrograph <-
           cex = 0.9,
           adj = 1
         )
-      } else
+      } else {
         mtext(
           paste(right_label, " (", P.units, ")", sep = ""),
           4,
@@ -130,6 +134,7 @@ plot_hydrograph <-
           cex = 0.9,
           adj = 1
         )
+      }
       par(new = T)
     }
     if (!is.null(precip2)) {
@@ -159,14 +164,15 @@ plot_hydrograph <-
         na.omit(streamflow[begin:endindex]), na.omit(streamflow2[begin:endindex])
       )),
       axes = FALSE
-      )
-    #mtext (expression(paste("                              ", " (" , m^3/s, ")", sep="")), 2,3)
+    )
+    # mtext (expression(paste("                              ", " (" , m^3/s, ")", sep="")), 2,3)
     if (S.units == "m3/s" | S.units == "m3s") {
-      mtext (expression(paste(" (" , m ^ 3 / s, ")", sep = "")), 2, 1.5)
+      mtext(expression(paste(" (", m^3 / s, ")", sep = "")), 2, 1.5)
     } else if (S.units == "ft3/s" | S.units == "ft3s") {
-      mtext (expression(paste(" (" , ft ^ 3 / s, ")", sep = "")), 2, 1.5)
-    } else if (S.units != "")
-      mtext (paste(" (" , S.units, ")", sep = ""), 2, 1.5)
+      mtext(expression(paste(" (", ft^3 / s, ")", sep = "")), 2, 1.5)
+    } else if (S.units != "") {
+      mtext(paste(" (", S.units, ")", sep = ""), 2, 1.5)
+    }
     lines(
       streamflow2[begin:endindex],
       col = S2.col,
@@ -179,7 +185,7 @@ plot_hydrograph <-
         streamflow3[begin:endindex],
         col = "blue",
         lwd = 1,
-        ##potential for more streamflows
+        ## potential for more streamflows
         lty = 3,
         xaxt = "n"
       )
@@ -189,7 +195,7 @@ plot_hydrograph <-
         streamflow4[begin:endindex],
         col = "green",
         lwd = 1,
-        ##potential for more streamflows
+        ## potential for more streamflows
         lty = 4,
         xaxt = "n"
       )
@@ -197,11 +203,11 @@ plot_hydrograph <-
     axis(
       # line = 24,
       side = 1,
-      las= 3,
+      las = 3,
       at = seq(0, (endindex - begin + 1), length = 12),
       pos = 0,
       labels = format(timeSeries[seq(begin, endindex, length = 12)], "%Y-%m-%d %H:%M")
-      )
+    )
     # axis(
     #   side = 3,
     #   las= 1,
@@ -209,8 +215,10 @@ plot_hydrograph <-
     #   pos = 0,
     #   labels = format(timeSeries[seq(begin, endindex, length = 12)], "%H:%M")
     #   )
-    abline(h = 1:4,
-           lty = 2, col = "grey")
+    graphics::abline(
+      h = 1:4,
+      lty = 2, col = "grey"
+    )
     axis(side = 2, pos = 0)
   }
 

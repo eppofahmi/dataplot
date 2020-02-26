@@ -1,5 +1,5 @@
-create_footer1 <- function (source_name, logo_path, footer_col) {
-  #Make the footer
+create_footer1 <- function(source_name, logo_path, footer_col) {
+  # Make the footer
   footer <- grid::grobTree(
     grid::rectGrob(gp = grid::gpar(fill = footer_col, lwd = 0)),
     # grid::linesGrob(x = grid::unit(c(0, 1), "npc"), y = grid::unit(1.1, "npc")),
@@ -9,8 +9,8 @@ create_footer1 <- function (source_name, logo_path, footer_col) {
       hjust = 0,
       gp = grid::gpar(
         fontsize = 8,
-        family = 'Roboto',
-        col = 'white'
+        family = "Roboto",
+        col = "white"
       )
     ),
     grid::rasterGrob(png::readPNG(logo_path), x = 0.944)
@@ -35,16 +35,18 @@ create_footer1 <- function (source_name, logo_path, footer_col) {
 #' library(dataplot)
 #' library(ggplot2)
 #'
-#' p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+#' p1 <- ggplot(data = economics, aes(x = pce, y = pop)) +
 #'   geom_line() +
 #'   kedata_theme()
 #'
-#' kedata_custom(plotname = p1,
-#'               footer_col = "grey",
-#'               logo = 'inst/extdata/logo/logokedata.png',
-#'               title = "Lorem Ipsum is simply dummy text",
-#'               subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-#'               data_source = "www.kedata.online")
+#' kedata_custom(
+#'   plotname = p1,
+#'   footer_col = "grey",
+#'   logo = "inst/extdata/logo/logokedata.png",
+#'   title = "Lorem Ipsum is simply dummy text",
+#'   subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+#'   data_source = "www.kedata.online"
+#' )
 #' }
 #'
 #' @export
@@ -58,7 +60,7 @@ kedata_custom <- function(plotname,
   title <- cowplot::ggdraw() +
     cowplot::draw_label(
       paste0(toupper(title)),
-      fontface = 'bold',
+      fontface = "bold",
       x = 0,
       hjust = 0,
       fontfamily = "Roboto",
@@ -67,7 +69,7 @@ kedata_custom <- function(plotname,
     ) +
     cowplot::draw_label(
       paste0(subtitle),
-      fontface = 'plain',
+      fontface = "plain",
       x = 0,
       hjust = 0,
       vjust = 2.5,
@@ -79,14 +81,17 @@ kedata_custom <- function(plotname,
   # Ploting title and subtitel
   p1 <-
     cowplot::plot_grid(title,
-                       plotname,
-                       ncol = 1,
-                       rel_heights = c(0.1, 1))
+      plotname,
+      ncol = 1,
+      rel_heights = c(0.1, 1)
+    )
   # Footer and data source
   footer <-
-    create_footer1(source_name = paste0(data_source),
-                   logo_path = paste0(logo),
-                   footer_col)
+    create_footer1(
+      source_name = paste0(data_source),
+      logo_path = paste0(logo),
+      footer_col
+    )
   # Final plot
   p1 <-
     ggpubr::ggarrange(

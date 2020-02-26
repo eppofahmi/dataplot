@@ -33,10 +33,12 @@ Scatter plot 4 variables in kedata style
 \dontrun{
 library(dataplot)
 library(ggplot2)
-plot_sctr4(data = midwest, x = "area", y = "poptotal", color = "state", size = "popdensity",
-      title = "Lorem Ipsum is simply dummy text",
-      subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-      data_source = "www.kedata.online")
+plot_sctr4(
+  data = midwest, x = "area", y = "poptotal", color = "state", size = "popdensity",
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "www.kedata.online"
+)
 }
 
 }

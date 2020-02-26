@@ -26,14 +26,16 @@ Menempatkan footer dibagian bawah yang terdiri dari logo dan data source
 library(dataplot)
 library(ggplot2)
 
-p1 = ggplot(data = economics, aes(x = pce, y = pop)) +
+p1 <- ggplot(data = economics, aes(x = pce, y = pop)) +
   geom_line() +
   kedata_theme()
 
-kedata_final2(plotname = p1,
-              title = "Lorem Ipsum is simply dummy text",
-              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-              data_source = "Sumber Data")
+kedata_final2(
+  plotname = p1,
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "Sumber Data"
+)
 }
 
 }

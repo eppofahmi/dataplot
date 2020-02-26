@@ -32,15 +32,22 @@ Waffle chart in kedata style
 library(ggplot2)
 library(dataplot)
 
-df <- structure(list(region = c("Africa", "Asia", "Latin America",
-                                "Other", "US-born"),
-                     ncases = c(36L, 34L, 56L, 2L, 44L)),
-                .Names = c("region","ncases"),
-                row.names = c(NA, -5L), class = "data.frame")
+df <- structure(list(
+  region = c(
+    "Africa", "Asia", "Latin America",
+    "Other", "US-born"
+  ),
+  ncases = c(36L, 34L, 56L, 2L, 44L)
+),
+.Names = c("region", "ncases"),
+row.names = c(NA, -5L), class = "data.frame"
+)
 
-plot_waffle(data = df, x = "region", y = "ncases", ndeep = 10,
-            title = "Lorem Ipsum is simply dummy text",
-            subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
-            data_source = "www.kedata.online")
+plot_waffle(
+  data = df, x = "region", y = "ncases", ndeep = 10,
+  title = "Lorem Ipsum is simply dummy text",
+  subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+  data_source = "www.kedata.online"
+)
 }
 }
