@@ -91,8 +91,10 @@ plot_treemap(data = df,
 Barchart merupakan salah satu jenis plot yang bisa difungsikan baik untuk menunjukkan perbandingan maupun komposisi. Dalam konteks ini, stacked barchart bisa digunakan untuk menunjukkan kedua secara bersamaan. Di mana di satu bagian dia akan menunjukkan perbandingan antar variabel. Sementara di sisi lain, stacked barchart juga akan menunjukkan komposisi dalam masing-masing variabel.
 
 ```{r, warning=FALSE, message=FALSE}
-library(tidyverse)
+library(ggplot2)
 library(dataplot)
+library(tidyr)
+library(dplyr)
 
 df1 <- mpg %>%
   count(manufacturer, class)
