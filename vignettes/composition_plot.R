@@ -34,3 +34,37 @@ plot_waffle(data = df, x = "region", y = "ncases", ndeep = 10,
             subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
             data_source = "www.kedata.online")
 
+## -----------------------------------------------------------------------------
+library(ggplot2)
+library(dataplot)
+library(treemapify)
+
+df <- G20
+
+plot_treemap(data = df,
+             area = "gdp_mil_usd",
+             fill = "region",
+             subgroup = "country",
+             title = "Lorem Ipsum is simply dummy text",
+             subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+             data_source = "www.kedata.online"
+             )
+
+
+## ---- warning=FALSE, message=FALSE--------------------------------------------
+library(tidyverse)
+library(dataplot)
+
+df1 <- mpg %>%
+  count(manufacturer, class)
+
+plot_stackedbar(data = df1,
+                x = "manufacturer",
+                y = "n",
+                fill = "class",
+                x_title = "col_x",
+                y_title = "col_y",
+                title = "Lorem Ipsum is simply dummy text",
+                subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+                data_source = "www.kedata.online")
+
