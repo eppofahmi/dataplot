@@ -9,4 +9,4 @@
 #'   \item{Rainfall depth (mm)}{rainfall data, in mm double format}
 #' }
 #' @source \url{http://www.diamondse.info/}
-"dataset"
+"rainfall"

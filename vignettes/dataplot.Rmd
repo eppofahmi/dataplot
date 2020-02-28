@@ -135,7 +135,7 @@ p4
 Plot ini merupakan jenis plot yang sering dan khusus digunakan dalam dunia hydrologi. Fungsi `hydrograph_plot()` disini dibuat berdasarkan fungsi dari package `EcoHydRology`. Berikut adalah contohnya:
 
 ```{r}
-rainfall <- dataplot::dataset
+rainfall <- dataplot::rainfall
 
 plot_hydrograph(timeSeries = rainfall$`Date Time`,
            streamflow = rainfall$Discharge,

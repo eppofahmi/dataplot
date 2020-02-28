@@ -39,7 +39,7 @@
 #' library(dataplot)
 #'
 #' png("data/test.png")
-#' rainfall <- dataplot::dataset
+#' rainfall <- dataplot::rainfall
 #'
 #' plot_hydrograph(
 #'   timeSeries = rainfall$`Date Time`,

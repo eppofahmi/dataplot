@@ -70,7 +70,7 @@ This function can now take NA values. If you chose to use the input argument but
 library(dataplot)
 
 png("data/test.png")
-rainfall <- dataplot::dataset
+rainfall <- dataplot::rainfall
 
 plot_hydrograph(
   timeSeries = rainfall$`Date Time`,

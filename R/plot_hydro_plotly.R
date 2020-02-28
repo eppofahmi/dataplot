@@ -16,7 +16,7 @@
 #' library(dataplot)
 #' library(plotly)
 #'
-#' rainfall <- dataplot::dataset
+#' rainfall <- dataplot::rainfall
 #'
 #' plotly_hydro(
 #'   df = rainfall, dates = rainfall$`Date Time`,

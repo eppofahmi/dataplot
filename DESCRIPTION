@@ -19,11 +19,14 @@ Imports:
     ggpubr (>= 0.2.4),
     ggExtra (>= 0.9),
     grid (>= 3.6.0),
+    htmlwidgets (>= 1.5.1),
     magick (>= 2.3),
     plotly (>= 4.9.1),
     png (>= 0.1.7),
+    tidytext (>= 0.2.2), 
     tidyr (>= 1.0.2),
-    treemapify (>= 2.5.3)
+    treemapify (>= 2.5.3), 
+    webshot (>= 0.5.2)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
