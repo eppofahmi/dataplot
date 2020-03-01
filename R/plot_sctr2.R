@@ -28,6 +28,7 @@
 #'
 #' @export
 plot_sctr2 <- function(data, x, y, title, subtitle, data_source) {
+  options(warn=-1)
   data <- data[, c(x, y)]
 
   colnames(data) <- c("col1", "col2")

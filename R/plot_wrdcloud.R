@@ -33,5 +33,7 @@ save_wcloud2 <- function(graphfile, filename) {
   set.seed(1234)
 
   htmlwidgets::saveWidget(graphfile, paste0(tempdir(), "tmp.html"),selfcontained = F)
-  webshot::webshot(paste0(tempdir(), "tmp.html"), paste0(filename), delay =5, vwidth = 640, vheight=480)
+  webshot::webshot(paste0(tempdir(), "tmp.html"), paste0(filename, ".png"), delay =5, vwidth = 640, vheight=480)
 }
+
+

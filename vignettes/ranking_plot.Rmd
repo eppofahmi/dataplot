@@ -1,0 +1,46 @@
+---
+title: "Rangking Plot"
+author: "Ujang Fahmi & Frey"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: 3
+vignette: >
+  %\VignetteIndexEntry{Rangking Plot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, warning = FALSE, message = FALSE, fig.align='center', fig.width=7, fig.height=5,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+Used to compare the position or performance of multiple items with respect to each other. Actual values matters somewhat less than the ranking.
+
+## Lollipop
+
+Lollipop chart sebenarnya hampir sama dengan bar chart. Namun salah satu kelebihannya adalah plot menjadi tidak terlalu penuh, karena direprsentasikan dengan point dan garis saja. Berikut adalah contohnya. 
+
+```{r}
+library(dataplot)
+library(ggplot2)
+
+df <- data.frame(
+  "brand" = c("Samsung", "Huawei", "Apple", "Xiaomi", "OPPO"),
+  "share" = c(10, 30, 20, 35, 5)
+)
+
+plot_lollipop(data = df, x = "brand", y = "share",
+              title = "Lorem Ipsum is simply dummy text",
+              subtitle = "Contrary to popular belief, Lorem Ipsum is not simply random text",
+              data_source = "www.kedata.online"
+              )
+```
+
+

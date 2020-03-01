@@ -111,5 +111,3 @@ plot_stackedbar(data = df1,
 ```
 
 
-
-

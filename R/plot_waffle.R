@@ -42,6 +42,7 @@ plot_waffle <-
            title,
            subtitle,
            data_source) {
+    options(warn=-1)
     data <- data[, c(x, y)]
     colnames(data) <- c("col1", "col2")
 
@@ -77,5 +78,5 @@ plot_waffle <-
       title = paste0(title),
       subtitle = paste0(subtitle),
       data_source = paste0(data_source)
-    )
+      )
   }
