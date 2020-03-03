@@ -42,5 +42,28 @@ plot_lollipop(data = df, x = "brand", y = "share",
               data_source = "www.kedata.online"
               )
 ```
+## Dumbbell Plot
 
+Dumbbell charts are a great tool if you wish to: 
+
+1. Visualize relative positions (like growth and decline) between two points in time. 
+2. Compare distance between two categories. In order to get the correct ordering of the dumbbells, the Y variable should be a factor and the levels of the factor variable should be in the same order as it should appear in the plot.
+
+```{r}
+library(dataplot)
+
+s <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/school_earnings.csv")
+s$School <- factor(s$School, levels = s$School[order(s$Men)])
+
+plot_dumbbell(data = s,
+              cat = "School",
+              x1 = "Women",
+              x2 = "Men",
+              size = 3,
+              x_title = "Salary",
+              y_title = "School",
+              title = "Gender earnings disparity",
+              subtitle = "Gender earnings disparity from Women VS Men based on University",
+              data_source = "www.kedata.online")
+```
 

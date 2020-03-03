@@ -55,6 +55,7 @@ kedata_final2 <- function(plotname,
                           title,
                           subtitle,
                           data_source) {
+  options(warn = 1)
   # Title
   title <- cowplot::ggdraw() +
     cowplot::draw_label(
