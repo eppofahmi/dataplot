@@ -33,4 +33,4 @@ waffle_plot(data = df, x = "region", y = "ncases", ndeep = 10,
 
 ![](https://raw.githubusercontent.com/eppofahmi/dataplot/master/man/figures/waffle.png)
 
-Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya dalam waffle chart di representasikan dalam bentuk potingan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan kondisi masing-masing kategori.
+Apa yang terjadi di dalam fungsi? sama dengan yang terjadi dan dipahami dalam membuat pie chart. Di mana isi dari plot merupakan persentase dari jumlah masing-masing variabel kategorik. Hanya dalam waffle chart di representasikan dalam bentuk potongan-potongan balok yang ditempatkan dalam x dan y yang sudah disesuaikan dengan kondisi masing-masing kategori.
